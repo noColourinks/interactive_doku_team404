@@ -80,6 +80,10 @@ export default class MovingObject extends InteractiveObject {
     this.speed.rot = rot;
   }
 
+  getSpeed() {
+    return this.speed;
+  }
+
   move() {
     if (this.holded) {
       return;

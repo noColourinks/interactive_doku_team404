@@ -2,6 +2,8 @@ let sketch = new p5();
 
 let emolga;
 let manicanWalk;
+var gameScale = { width: 1000, height: 500 };
+
 function preload() {
   console.log("preload");
 
@@ -12,7 +14,7 @@ window.preload = preload;
 
 function setup() {
   console.log("setup");
-  sketch.createCanvas(2000, 2000);
+  sketch.createCanvas(gameScale.width, gameScale.height);
   sketch.frameRate(30);
 }
 
