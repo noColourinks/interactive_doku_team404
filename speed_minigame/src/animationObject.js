@@ -1,4 +1,4 @@
-import MovingObject from "./src/movingObject.js";
+import MovingObject from "./movingObject.js";
 
 export default class AnimationObject extends MovingObject {
   constructor(x, y, width, height) {
