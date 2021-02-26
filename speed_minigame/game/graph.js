@@ -38,11 +38,13 @@ export default class Graph extends DisplayObject {
   }
 
   update() {
-    this.time++;
-    this.points.push({
-      x: this.time,
-      y: this.size.h - this.valueObject[this.valueKey].x * 10,
-    });
+    this.time += 2;
+    if (this.time < this.size.w) {
+      this.points.push({
+        x: this.time,
+        y: this.size.h - this.valueObject[this.valueKey].x * 15,
+      });
+    }
   }
 
   start() {
