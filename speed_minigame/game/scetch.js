@@ -11,8 +11,8 @@ let speedGraph;
 function draw() {
   if (!started) {
     started = true;
-    car = new Car(0, 100, 100, 100);
-    speedGraph = new Graph(100, 200, 600, 200, car, "speed");
+    car = new Car(0, 33.5, 393.73, 231.92);
+    speedGraph = new Graph(100, 250, 600, 200, car, "speed");
     world = new World(0, 0, width, height);
 
     world.addChild(car);

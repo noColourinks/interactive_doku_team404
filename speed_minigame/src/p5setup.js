@@ -2,6 +2,7 @@ let sketch = new p5();
 
 let emolga;
 let manicanWalk;
+let carDriving;
 var gameScale = { width: 1000, height: 500 };
 
 function preload() {
@@ -9,6 +10,7 @@ function preload() {
 
   emolga = loadImage("./img/Emolga.png");
   manicanWalk = loadImage("./img/manicanWalk.png");
+  carDriving = loadImage("./img/AutoFahrend_2.png");
 }
 window.preload = preload;
 
@@ -18,6 +20,6 @@ function setup() {
   sketch.frameRate(30);
 }
 
-export { emolga, manicanWalk };
+export { emolga, manicanWalk, carDriving };
 
 window.setup = setup;

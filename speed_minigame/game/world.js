@@ -3,7 +3,7 @@ import InteractiveObject from "../src/interactiveObject.js";
 export default class World extends InteractiveObject {
   constructor(x, y, width, height) {
     super(x, y, width, height);
-    this.sweetSpot = { xLeft: width - 300, xRight: width - 200 };
+    this.sweetSpot = { xLeft: width - 450.73, xRight: width - 200 };
     this.groundHeight = 200;
     this.tolerance = 5;
     this.winText = "";

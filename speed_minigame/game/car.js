@@ -2,29 +2,40 @@ import AnimationFunctions from "../AnimationFunctions.js";
 import AnimationObject from "../src/animationObject.js";
 import InteractiveObject from "../src/interactiveObject.js";
 import MovingObject from "../src/movingObject.js";
-import { emolga, manicanWalk } from "../src/p5setup.js";
+import { emolga, manicanWalk, carDriving } from "../src/p5setup.js";
 
 export default class Car extends AnimationObject {
   constructor(x, y, width, height) {
     super(x, y, width, height);
-    this.addImage(manicanWalk, "manicanWalk", 100, 100, 0, 0, 0, 0, 150, 150);
-    this.addAnimationFrames("manicanWalk", "manicanWalk", 150, 150, 3);
-    this.switchImage("manicanWalk");
-    this.debug = false;
+    this.addImage(
+      carDriving,
+      "carDriving",
+      width,
+      height,
+      0,
+      0,
+      0,
+      0,
+      393.73,
+      231.92
+    );
+    this.addAnimationFrames("carDriving", "carDriving", 393.73, 231.92, 3);
+    this.switchImage("carDriving");
+    this.debug = true;
     this.setLimits(7, 0, 0, 0, 0, 0);
     this.isDriving = true;
     this.setSpeed(7, 0, 0);
-    // this.setCostumAnimation(
-    //   "manicanWalLeftk",
-    //   this.triggerIds.keyPressed + ":68",
-    //   this.triggerIds.keyReleased + ":68",
-    //   0.2,
-    //   (value) => {
-    //     this.flip(1, 1);
-    //     this.runAnimationFrame("manicanWalk", value);
-    //   },
-    //   { active: true, repeate: true, resetAfterFinish: true }
-    // );
+    this.setCostumAnimation(
+      "carDrivingAnimation",
+      this.triggerIds.timed,
+      this.triggerIds.timed,
+      0.4,
+      (value) => {
+        this.runAnimationFrame("carDriving", value);
+      },
+      { active: true, repeate: true, resetAfterFinish: true }
+    );
+    this.startAnimation("carDrivingAnimation");
     // console.log(this.animations);
     // this.setCostumAnimation(
     //   "manicanWalkRight",
