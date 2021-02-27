@@ -14,7 +14,7 @@ function preload() {
   emolga = loadImage("./img/Emolga.png");
   manicanWalk = loadImage("./img/manicanWalk.png");
   carDriving = loadImage("./img/AutoFahrend_2.png");
-  carStanding = loadImage("./img/Auto_ohne_Abgase.png");
+  carStanding = loadImage("./img/Auto-ohne-Abgase.png");
   trafficLight = loadImage("./img/Ampel.png");
   backgroundSpeedMinigame = loadImage("./img/Hintergrund_Speed_Minispiel.png");
 }
