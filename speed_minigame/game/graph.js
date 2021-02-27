@@ -1,6 +1,6 @@
 import DisplayObject from "../src/displayObject.js";
 import InteractiveObject from "../src/interactiveObject.js";
-import { comfortaa } from "../src/p5setup.js";
+import { comfortaa, high, low } from "../src/p5setup.js";
 
 export default class Graph extends DisplayObject {
   constructor(x, y, width, height, valueObject, valueKey, textY, textX) {
@@ -25,13 +25,22 @@ export default class Graph extends DisplayObject {
         y: this.size.h - this.valueObject["speed"].x * 20,
       });
     });
+    this.xAxe = new DisplayObject(0, this.size.h - 3);
+    this.xAxe.addImage(low, "low", this.size.w, 6);
+    this.xAxe.switchImage("low");
+    this.addChild(this.xAxe);
+
+    this.yAxe = new DisplayObject(0, 0);
+    this.yAxe.addImage(high, "high", 6, this.size.h);
+    this.yAxe.switchImage("high");
+    this.addChild(this.yAxe);
   }
 
   draw() {
     stroke(255);
     strokeWeight(3);
-    line(0, 0, 0, this.size.h);
-    line(0, this.size.h, this.size.w, this.size.h);
+    // line(0, 0, 0, this.size.h);
+    // line(0, this.size.h, this.size.w, this.size.h);
     strokeWeight(2);
     // noStroke();
     if (this.points.length > 1) {
