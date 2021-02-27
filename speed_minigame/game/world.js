@@ -10,6 +10,7 @@ export default class World extends InteractiveObject {
     this.groundHeight = 235;
     this.tolerance = 5;
     this.winText = "";
+    this.end = 0;
   }
   init() {
     window.addEventListener("carStopped", (e) => {
@@ -21,6 +22,7 @@ export default class World extends InteractiveObject {
     background(255);
     fill(0);
   }
+
   drawPost() {
     stroke(0);
     strokeWeight(5);
@@ -46,6 +48,20 @@ export default class World extends InteractiveObject {
       this.winText = "Vor der Ampel angehalten :D";
     } else {
       this.winText = "Über Rot gefahren!";
+    }
+    this.end = 1;
+  }
+
+  keyPressed() {
+    if (this.end === 1) {
+      this.end = 2;
+    }
+  }
+
+  keyReleased() {
+    if (keyCode === 32 && this.end === 2) {
+      this.end = 0;
+      window.dispatchEvent(new CustomEvent("restart"));
     }
   }
 }

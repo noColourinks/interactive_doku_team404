@@ -7,6 +7,7 @@ import {
   manicanWalk,
   carDriving,
   carStanding,
+  carBrake,
 } from "../src/p5setup.js";
 
 export default class Car extends AnimationObject {
@@ -36,6 +37,8 @@ export default class Car extends AnimationObject {
       393.73,
       231.92
     );
+    this.addImage(carBrake, "carBrake");
+    this.addAnimationFrames("carBrakeFrames", "carBrake", 393.73, 231.92, 3);
     this.addAnimationFrames("carDriving", "carDriving", 393.73, 231.92, 3);
     this.switchImage("carDriving");
     this.debug = false;
@@ -44,13 +47,23 @@ export default class Car extends AnimationObject {
     this.setSpeed(7, 0, 0);
     this.brakeTime = 0;
     this.gasTime = 0;
-    this.drivingAnimation = this.setCostumAnimation(
+    this.setCostumAnimation(
       "carDrivingAnimation",
-      this.triggerIds.timed,
-      this.triggerIds.timed,
+      this.triggerIds.keyReleased + ":32",
+      this.triggerIds.keyPressed + ":32",
       0.4,
       (value) => {
         this.runAnimationFrame("carDriving", value);
+      },
+      { active: true, repeate: true, resetAfterFinish: true }
+    );
+    this.setCostumAnimation(
+      "carBrakingAnimation",
+      this.triggerIds.keyPressed + ":32",
+      this.triggerIds.keyReleased + ":32",
+      0.4,
+      (value) => {
+        this.runAnimationFrame("carBrakeFrames", value);
       },
       { active: true, repeate: true, resetAfterFinish: true }
     );
@@ -83,11 +96,23 @@ export default class Car extends AnimationObject {
         this.setAcceleration(this.gasTime, 0, 0);
         this.brakeTime = 0;
       }
-      if (this.getSpeed().x < 0.3 || this.pos.x > width - 100) {
+      if (this.pos.x > width) {
+        this.isDriving = false;
+        this.stopAllAnimations();
+        this.switchImage("carStanding");
+        this.disable();
+        window.dispatchEvent(
+          new CustomEvent("carStopped", {
+            detail: { pos: this.pos },
+          })
+        );
+      }
+      if (this.getSpeed().x < 0.2) {
         this.isDriving = false;
         this.stop();
         this.stopAllAnimations();
         this.switchImage("carStanding");
+        this.disable();
         window.dispatchEvent(
           new CustomEvent("carStopped", {
             detail: { pos: this.pos },

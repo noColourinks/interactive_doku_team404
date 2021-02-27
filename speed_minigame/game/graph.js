@@ -9,16 +9,26 @@ export default class Graph extends DisplayObject {
     this.valueKey = valueKey;
     this.points = [];
     this.time = 0;
-    this.measure = false;
     this.textY = textY;
     this.textX = textX;
   }
-  init() {}
+  init() {
+    window.addEventListener("carStopped", (e) => {
+      this.disable();
+      this.points.push({
+        x: this.time,
+        y: this.size.h - this.valueObject["speed"].x * 20,
+      });
+      this.points.push({
+        x: this.time + 10,
+        y: this.size.h - this.valueObject["speed"].x * 20,
+      });
+    });
+  }
 
   draw() {
-    stroke(0);
+    stroke(255);
     strokeWeight(3);
-    console.log("hi");
     line(0, 0, 0, this.size.h);
     line(0, this.size.h, this.size.w, this.size.h);
     strokeWeight(2);
@@ -35,8 +45,9 @@ export default class Graph extends DisplayObject {
       }
       noStroke();
       fill(255);
-      text(this.textY, -this.textY.length * 7, 20);
-      text(this.textX, this.size.w - this.textX.length * 7, this.size.h + 20);
+      textSize(16);
+      text(this.textY, -this.textY.length * 9, 20);
+      text(this.textX, this.size.w - this.textX.length * 7, this.size.h + 22);
 
       //   this.points.forEach((point, index) => {
       //     stroke("red");
@@ -53,12 +64,5 @@ export default class Graph extends DisplayObject {
         y: this.size.h - this.valueObject["speed"].x * 20,
       });
     }
-  }
-
-  start() {
-    this.measure = true;
-  }
-  stop() {
-    this.measure = false;
   }
 }

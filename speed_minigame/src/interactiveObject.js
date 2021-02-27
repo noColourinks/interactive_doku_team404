@@ -60,7 +60,7 @@ export default class InteractiveObject extends DisplayObject {
   }
 
   onUpdate() {
-    if (this.waitValues.start) {
+    if (this.waitValues.start > 0) {
       this.waiting();
     }
     if (this.isActive) {
@@ -131,9 +131,7 @@ export default class InteractiveObject extends DisplayObject {
     }
   }
 
-  keyReleased() {
-    console.log("hey Taste: " + keyCode + " released!");
-  }
+  keyReleased() {}
 
   onMouseClick() {
     if (this.isActive) {

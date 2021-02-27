@@ -108,7 +108,6 @@ export default class AnimationObject extends MovingObject {
     if (!this.images.hasOwnProperty(imgKey)) {
       return console.error(`There need to be an image with the id: ${imgKey}`);
     }
-    console.log(this.getImage(imgKey));
     this.animationFrames[id] = {
       id,
       img: this.getImage(imgKey),

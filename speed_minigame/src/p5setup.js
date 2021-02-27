@@ -3,6 +3,7 @@ let sketch = new p5();
 let emolga;
 let manicanWalk;
 let carDriving;
+let carBrake;
 let carStanding;
 let trafficLight;
 let backgroundSpeedMinigame;
@@ -17,6 +18,7 @@ function preload() {
   carStanding = loadImage("./img/Auto-ohne-Abgase.png");
   trafficLight = loadImage("./img/Ampel.png");
   backgroundSpeedMinigame = loadImage("./img/Hintergrund_Speed_Minispiel.png");
+  carBrake = loadImage("./img/Auto-bremst.png");
 }
 window.preload = preload;
 
@@ -33,6 +35,7 @@ export {
   trafficLight,
   backgroundSpeedMinigame,
   carStanding,
+  carBrake,
 };
 
 window.setup = setup;
