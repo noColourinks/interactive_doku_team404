@@ -2,7 +2,7 @@ import DisplayObject from "../src/displayObject.js";
 import InteractiveObject from "../src/interactiveObject.js";
 
 export default class Graph extends DisplayObject {
-  constructor(x, y, width, height, valueObject, valueKey) {
+  constructor(x, y, width, height, valueObject, valueKey, textY, textX) {
     super(x, y);
     this.setSize(width, height);
     this.valueObject = valueObject;
@@ -10,6 +10,8 @@ export default class Graph extends DisplayObject {
     this.points = [];
     this.time = 0;
     this.measure = false;
+    this.textY = textY;
+    this.textX = textX;
   }
   init() {}
 
@@ -31,6 +33,11 @@ export default class Graph extends DisplayObject {
           this.points[i].y
         );
       }
+      noStroke();
+      fill(255);
+      text(this.textY, -this.textY.length * 7, 20);
+      text(this.textX, this.size.w - this.textX.length * 7, this.size.h + 20);
+
       //   this.points.forEach((point, index) => {
       //     stroke("red");
       //     line(point.x, point.y, 3);
@@ -43,7 +50,7 @@ export default class Graph extends DisplayObject {
     if (this.time < this.size.w) {
       this.points.push({
         x: this.time,
-        y: this.size.h - this.valueObject["speed"].x * 15,
+        y: this.size.h - this.valueObject["speed"].x * 20,
       });
     }
   }

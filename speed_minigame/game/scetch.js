@@ -15,7 +15,16 @@ function draw() {
   if (!started) {
     started = true;
     car = new Car(0, 70, 393.73, 231.92);
-    speedGraph = new Graph(width / 2 - 300, 265, 600, 200, car, "brakeTime");
+    speedGraph = new Graph(
+      width / 2 - 300,
+      265,
+      600,
+      200,
+      car,
+      "brakeTime",
+      "Geschwindigkeit",
+      "Zeit"
+    );
     world = new World(0, 0, width, height);
     trafficLightObj = new DisplayObject(800, 40);
     trafficLightObj.addImage(

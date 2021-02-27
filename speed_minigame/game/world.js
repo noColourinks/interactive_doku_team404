@@ -33,10 +33,11 @@ export default class World extends InteractiveObject {
       this.sweetSpot.xRight,
       this.groundHeight
     );
-    stroke(0);
-    strokeWeight(1);
-    textSize(14);
-    text(this.winText, 30, 35);
+    noStroke();
+    fill(255);
+    textSize(16);
+    textAlign(CENTER);
+    text(this.winText, this.size.w / 2 - 250, this.size.h / 2, 500, 20);
   }
 
   checkSweetSpot(pos) {

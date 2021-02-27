@@ -174,6 +174,19 @@ export default class AnimationObject extends MovingObject {
     }
   }
 
+  stopAllAnimations() {
+    this.runningAnimations.forEach((animation) => {
+      this.deleteTimer(animation.id);
+      if (animation.property.resetAfterFinish) {
+        animation.func(0);
+      }
+      if (animation.property.deleteAfterFinish) {
+        delete this.animations[animation.id];
+      }
+    });
+    this.runningAnimations = [];
+  }
+
   startAnimation(id) {
     if (!this.animations.hasOwnProperty(id)) {
       console.error("There is no animation to start with the id: " + id);
