@@ -226,6 +226,8 @@ export default class DisplayObject {
   }
   draw() {}
 
+  drawPost() {}
+
   display() {
     push();
 
@@ -270,7 +272,9 @@ export default class DisplayObject {
         );
       }
     }
-
+    push();
+    this.drawPost();
+    pop();
     this.children.forEach((element) => {
       if (element instanceof DisplayObject) {
         element.display();

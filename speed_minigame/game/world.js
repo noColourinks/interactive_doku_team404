@@ -1,10 +1,13 @@
 import InteractiveObject from "../src/interactiveObject.js";
+import { backgroundSpeedMinigame } from "../src/p5setup.js";
 
 export default class World extends InteractiveObject {
   constructor(x, y, width, height) {
     super(x, y, width, height);
-    this.sweetSpot = { xLeft: width - 450.73, xRight: width - 200 };
-    this.groundHeight = 200;
+    this.sweetSpot = { xLeft: width - 250.73, xRight: width - 200 };
+    this.addImage(backgroundSpeedMinigame, "background", width, height, 0, 0);
+    this.switchImage("background");
+    this.groundHeight = 235;
     this.tolerance = 5;
     this.winText = "";
   }
@@ -15,12 +18,14 @@ export default class World extends InteractiveObject {
   }
 
   draw() {
-    background(150, 150, 255);
+    background(255);
     fill(0);
+  }
+  drawPost() {
     stroke(0);
     strokeWeight(5);
     line(0, this.groundHeight, width, this.groundHeight);
-    stroke(0, 255, 0);
+    stroke(255);
     strokeWeight(5);
     line(
       this.sweetSpot.xLeft,
@@ -36,7 +41,7 @@ export default class World extends InteractiveObject {
 
   checkSweetSpot(pos) {
     console.log(pos.x);
-    if (pos.x + 320 < this.sweetSpot.xRight) {
+    if (pos.x + 310 < this.sweetSpot.xRight) {
       this.winText = "Vor der Ampel angehalten :D";
     } else {
       this.winText = "Über Rot gefahren!";

@@ -15,10 +15,11 @@ export default class Graph extends DisplayObject {
 
   draw() {
     stroke(0);
-    stroke(2);
+    strokeWeight(3);
     console.log("hi");
     line(0, 0, 0, this.size.h);
     line(0, this.size.h, this.size.w, this.size.h);
+    strokeWeight(2);
     // noStroke();
     if (this.points.length > 1) {
       for (let i = 1; i < this.points.length; i++) {
@@ -39,7 +40,6 @@ export default class Graph extends DisplayObject {
 
   update() {
     this.time += 2;
-    console.log(this.valueObject.brakeTime);
     if (this.time < this.size.w) {
       this.points.push({
         x: this.time,
