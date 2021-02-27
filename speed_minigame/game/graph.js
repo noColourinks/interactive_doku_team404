@@ -39,10 +39,11 @@ export default class Graph extends DisplayObject {
 
   update() {
     this.time += 2;
+    console.log(this.valueObject.brakeTime);
     if (this.time < this.size.w) {
       this.points.push({
         x: this.time,
-        y: this.size.h - this.valueObject[this.valueKey].x * 15,
+        y: this.size.h - this.valueObject["speed"].x * 15,
       });
     }
   }

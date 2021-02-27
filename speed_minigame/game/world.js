@@ -36,7 +36,7 @@ export default class World extends InteractiveObject {
 
   checkSweetSpot(pos) {
     console.log(pos.x);
-    if (pos.x + 100 < this.sweetSpot.xRight) {
+    if (pos.x + 320 < this.sweetSpot.xRight) {
       this.winText = "Vor der Ampel angehalten :D";
     } else {
       this.winText = "Über Rot gefahren!";

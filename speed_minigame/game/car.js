@@ -25,6 +25,8 @@ export default class Car extends AnimationObject {
     this.setLimits(7, 0, 0, 0, 0, 0);
     this.isDriving = true;
     this.setSpeed(7, 0, 0);
+    this.brakeTime = 0;
+    this.gasTime = 0;
     this.setCostumAnimation(
       "carDrivingAnimation",
       this.triggerIds.timed,
@@ -55,9 +57,14 @@ export default class Car extends AnimationObject {
   update() {
     if (this.isDriving) {
       if (keyIsDown(32)) {
-        this.setAcceleration(-0.2, 0, 0);
+        if (this.brakeTime > -0.3) this.brakeTime -= 0.02;
+        this.gasTime = 0;
+        this.setAcceleration(this.brakeTime, 0, 0);
       } else {
-        this.setAcceleration(0.2, 0, 0);
+        if (this.gasTime < 0.2);
+        this.gasTime += 0.01;
+        this.setAcceleration(this.gasTime, 0, 0);
+        this.brakeTime = 0;
       }
       if (this.getSpeed().x < 0.3 || this.pos.x > width - 100) {
         this.isDriving = false;
