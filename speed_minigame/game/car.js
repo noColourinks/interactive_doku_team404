@@ -2,7 +2,12 @@ import AnimationFunctions from "../AnimationFunctions.js";
 import AnimationObject from "../src/animationObject.js";
 import InteractiveObject from "../src/interactiveObject.js";
 import MovingObject from "../src/movingObject.js";
-import { emolga, manicanWalk, carDriving } from "../src/p5setup.js";
+import {
+  emolga,
+  manicanWalk,
+  carDriving,
+  carStanding,
+} from "../src/p5setup.js";
 
 export default class Car extends AnimationObject {
   constructor(x, y, width, height) {
@@ -19,15 +24,27 @@ export default class Car extends AnimationObject {
       393.73,
       231.92
     );
+    this.addImage(
+      carStanding,
+      "carStanding",
+      width,
+      height,
+      0,
+      0,
+      0,
+      0,
+      393.73,
+      231.92
+    );
     this.addAnimationFrames("carDriving", "carDriving", 393.73, 231.92, 3);
     this.switchImage("carDriving");
-    this.debug = true;
+    this.debug = false;
     this.setLimits(7, 0, 0, 0, 0, 0);
     this.isDriving = true;
     this.setSpeed(7, 0, 0);
     this.brakeTime = 0;
     this.gasTime = 0;
-    this.setCostumAnimation(
+    this.drivingAnimation = this.setCostumAnimation(
       "carDrivingAnimation",
       this.triggerIds.timed,
       this.triggerIds.timed,
@@ -69,6 +86,8 @@ export default class Car extends AnimationObject {
       if (this.getSpeed().x < 0.3 || this.pos.x > width - 100) {
         this.isDriving = false;
         this.stop();
+        this.stopAllAnimations();
+        this.switchImage("carStanding");
         window.dispatchEvent(
           new CustomEvent("carStopped", {
             detail: { pos: this.pos },
