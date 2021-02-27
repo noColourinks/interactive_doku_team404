@@ -7,6 +7,7 @@ let carBrake;
 let carStanding;
 let trafficLight;
 let backgroundSpeedMinigame;
+let comfortaa;
 var gameScale = { width: 1000, height: 500 };
 
 function preload() {
@@ -19,6 +20,7 @@ function preload() {
   trafficLight = loadImage("./img/Ampel.png");
   backgroundSpeedMinigame = loadImage("./img/Hintergrund_Speed_Minispiel.png");
   carBrake = loadImage("./img/Auto-bremst.png");
+  comfortaa = loadFont("./fonts/Comfortaa-Bold.ttf");
 }
 window.preload = preload;
 
@@ -36,6 +38,7 @@ export {
   backgroundSpeedMinigame,
   carStanding,
   carBrake,
+  comfortaa,
 };
 
 window.setup = setup;

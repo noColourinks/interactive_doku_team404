@@ -1,5 +1,5 @@
 import InteractiveObject from "../src/interactiveObject.js";
-import { backgroundSpeedMinigame } from "../src/p5setup.js";
+import { backgroundSpeedMinigame, comfortaa } from "../src/p5setup.js";
 
 export default class World extends InteractiveObject {
   constructor(x, y, width, height) {
@@ -37,17 +37,17 @@ export default class World extends InteractiveObject {
     );
     noStroke();
     fill(255);
+    textFont(comfortaa);
     textSize(16);
     textAlign(CENTER);
     text(this.winText, this.size.w / 2 - 250, this.size.h / 2, 500, 20);
   }
 
   checkSweetSpot(pos) {
-    console.log(pos.x);
     if (pos.x + 310 < this.sweetSpot.xRight) {
-      this.winText = "Vor der Ampel angehalten :D";
+      this.winText = "Vor der Ampel angehalten!";
     } else {
-      this.winText = "Über Rot gefahren!";
+      this.winText = "Über der Haltelinie!";
     }
     this.end = 1;
   }

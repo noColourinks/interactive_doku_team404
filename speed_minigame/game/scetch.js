@@ -3,7 +3,7 @@ import InteractiveObject from "../src/interactiveObject.js";
 import Car from "./car.js";
 import Graph from "./graph.js";
 import World from "./world.js";
-import { trafficLight } from "../src/p5setup.js";
+import { trafficLight, comfortaa } from "../src/p5setup.js";
 
 let started = false;
 let car;
@@ -26,13 +26,15 @@ function draw() {
   if (state === "start") {
     push();
     noStroke();
-    fill(100, 100, 100, 100);
+    fill(50, 50, 50, 160);
     rect(0, 0, width, height);
     fill(255);
     textAlign(CENTER);
     textSize(25);
+    textFont(comfortaa);
+    textLeading(52);
     text(
-      "Press Space to Brake.\nStart Game with Space",
+      "Start das Spiel mit Leertaste.\nBremse mit Leertaste.",
       width / 2 - 250,
       height / 2 - 25,
       500,
