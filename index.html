@@ -124,9 +124,11 @@
       </div>
     </section>
     <section id="team">
-      <div class="smartphone_border"></div>
-      <section id="content">
-        <section id="my_session" class="on_screen">
+      <div class="grid_container">
+        <div class="grid_full">
+      <div class="smartphone_border">
+      <div id="content">
+        <div id="my_session" class="on_screen">
           <div class="charts">
             <div id="my_way_map"></div>
           </div>
@@ -137,29 +139,31 @@
               <b>20.01.2020</b>
             </p>
           </div>
-          <div class="grid_container">
-            <div class="grid_full button">
+          <div class="grid_container_prototyp">
+            <div class="grid_full_prototyp button_prototyp">
               <h2>Experten anfragen</h2>
             </div>
-            <div class="grid_full white">
-              <h2>Diagramm für allgemeine Probleme</h2>
+            <div class="grid_full_prototyp white">
+              <h2 id="blue_headline_special">Diagramm für allgemeine Probleme</h2>
             </div>
-            <div class="grid_full">
+            <div class="grid_full_prototyp">
               <div class="charts"><canvas id="chart_my_sessions_problems" width="360" height="480"></div>
             </div>
-            <div id="session_time"class="grid_full flex white">
+            <div id="session_time"class="grid_full_prototyp flex white">
               <p>10:15 bis 11:00</p>
               <p>Dauer: 00:45h</p>
             </div>
-            <div id="session_light_conditions" class="grid_left light_conditions white">
+            <div id="session_light_conditions" class="grid_left_prototyp light_conditions white">
             </div>
-            <div id="session_weather" class="grid_right weather">
+            <div id="session_weather" class="grid_right_prototyp weather">
             </div>
-            <div class="grid_full road_information">
+            <div class="grid_full_prototyp road_information">
               <div class="charts"><div class="charts"><canvas id="chart_my_sessions_road_information" width="360" height="480"></div></div>
             </div>
-        </section>
-  
+            </div>
+        </div>
+      </div>
+      </div>
         <div id="nav" class="">
           <div class="nav_bar">
             <div class="menu toggle_nav">
@@ -196,9 +200,10 @@
             </div>
           </div>
         </div>
-      </section>
-      <script src="./prototyp_learnings/js/navigation.js"  type="module"></script>
     </section>
+  </div>
+  </div>
+    <script src="./prototyp_learnings/js/navigation.js"  type="module"></script>
     <script src="node_modules/meanderer/dist/meanderer.min.js"></script>
     <script src="./js/funcs.js"></script>
   </body>

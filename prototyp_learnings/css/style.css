@@ -28,89 +28,17 @@ input:focus {
   -o-border-radius: 20px;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  line-height: 1.5rem;
-  box-sizing: border-box;
-  color: #fff;
-}
-
-html {
-  font-size: 16px;
-  font-family: "Comfortaa Regular";
-}
-
-html,
-body {
-  width: 100%;
-  display: block;
-  min-height: 100%;
-  position: relative;
-}
-
-body {
-  background: rgb(15, 81, 89);
-  background: linear-gradient(
-    0deg,
-    rgba(15, 81, 89, 1) 0%,
-    rgba(53, 79, 101, 1) 100%
-  );
-}
-
-section {
-  background-color: rgb(255, 255, 255);
-  min-height: 712px;
-  margin: 20px auto 0;
-  border-radius: 20px;
-  width: 100%;
-  display: none;
-}
-
-h1,
-h2,
-h3 {
-  font-family: "Roboto Black";
-}
-
-h1 {
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 1.2rem;
-  font-family: "Roboto Black";
-  color: #fff;
-  /*text-transform: uppercase; */
-  line-height: 1;
-}
-
-h3 {
-  font-size: 1rem;
-}
-
-p {
-  font-size: 1rem;
-}
-
-a {
-  cursor: pointer;
-}
-
 /******** Ab hier kommt alles für alle section ********/
 
 .smartphone_border {
   height: 830px;
   margin: 12px calc(50% - 219px);
-  position: fixed;
   background-color: #1212;
-  left: 0;
-  top: 0;
   width: 440px;
   border-radius: 20px;
 }
 
-section#content {
+div#content {
   position: relative;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -120,14 +48,56 @@ section#content {
   height: 812px;
 }
 
-section.on_screen {
+div#my_session {
+  background-color: rgb(255, 255, 255);
+  min-height: 712px;
+  margin: 20px auto 0;
+  border-radius: 20px;
+  width: 100%;
+}
+
+div.on_screen {
   display: block;
+}
+
+section#team h1,
+section#team h2,
+section#team h3 {
+  font-family: "Roboto Black";
+}
+
+section#team h1 {
+  font-size: 2rem;
+}
+
+section#team h2 {
+  font-size: 1.2rem;
+  font-family: "Roboto Black";
+  color: #fff;
+  /*text-transform: uppercase; */
+  line-height: 1;
+}
+
+section#team h3 {
+  font-size: 1rem;
+}
+
+section#team p {
+  font-size: 1rem;
+}
+
+section#team a {
+  cursor: pointer;
+}
+
+section#team #blue_headline_special {
+  color: rgb(15, 81, 89);
 }
 
 /********** Nav ***********/
 
 #nav {
-  position: fixed;
+  position: absolute;
   width: 420px;
   background-color: #fff;
   margin: 0 auto;
@@ -295,12 +265,12 @@ section.on_screen {
   transition: width 0.5s ease, left 0.5s ease;
 }
 
-#nav_open_content .grid_full p {
+#nav_open_content .grid_full_prototyp p {
   width: 100%;
   text-align: center;
 }
 
-#nav_open_content .grid_container {
+#nav_open_content .grid_container_prototyp {
   width: 70%;
   margin: 0 auto;
 }
@@ -323,7 +293,7 @@ section.on_screen {
 }
 
 /********** Grid ***********/
-.grid_container {
+.grid_container_prototyp {
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto auto auto;
@@ -334,7 +304,7 @@ section.on_screen {
   padding: 20px;
 }
 
-.grid_container > div {
+.grid_container_prototyp > div {
   font-size: 1rem;
   background-color: rgb(15, 81, 89);
   background: linear-gradient(
@@ -349,17 +319,17 @@ section.on_screen {
   align-items: flex-end;
 }
 
-.grid_left {
+.grid_left_prototyp {
   grid-column-start: 1;
   grid-column-end: 2;
 }
 
-.grid_right {
+.grid_right_prototyp {
   grid-column-start: 2;
   grid-column-end: 3;
 }
 
-.grid_full {
+.grid_full_prototyp {
   grid-column-start: 1;
   grid-column-end: 3;
 }
@@ -384,7 +354,7 @@ section.on_screen {
 
 /********** Button ***********/
 
-.grid_container > div.button {
+.grid_container_prototyp > div.button_prototyp {
   background: rgb(241, 178, 30);
   background: linear-gradient(
     60deg,
@@ -397,8 +367,8 @@ section.on_screen {
 
 /********** Formular ***********/
 
-.grid_container.formular,
-.grid_container.formular > div {
+.grid_container_prototyp.formular,
+.grid_container_prototyp.formular > div {
   padding: 0;
   background: transparent;
   width: 100%;
@@ -513,15 +483,15 @@ textarea::placeholder {
 
 /*********** white grid_container ****/
 
-.grid_full.white,
-.grid_left.white,
-.grid_right.white {
+.grid_full_prototyp.white,
+.grid_left_prototyp.white,
+.grid_right_prototyp.white {
   background: transparent;
 }
 
-.grid_full.white *,
-.grid_left.white *,
-.grid_right.white * {
+.grid_full_prototyp.white *,
+.grid_left_prototyp.white *,
+.grid_right_prototyp.white * {
   color: rgb(15, 81, 89);
 }
 
@@ -530,7 +500,7 @@ textarea::placeholder {
   justify-content: space-between;
 }
 
-.grid_full.content {
+.grid_full_prototyp.content {
   flex-direction: column;
 }
 
