@@ -86,7 +86,7 @@ export default class Car extends AnimationObject {
 
   update() {
     if (this.isDriving) {
-      if (keyIsDown(32)) {
+      if (keyIsDown(66)) {
         if (this.brakeTime > -0.3) this.brakeTime -= 0.02;
         this.gasTime = 0;
         this.setAcceleration(this.brakeTime, 0, 0);
