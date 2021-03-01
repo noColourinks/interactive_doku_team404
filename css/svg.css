@@ -1,0 +1,12 @@
+/******* svg *******/
+
+object#map svg#Ebene_1 g#Problem1 *,
+object#map svg#Ebene_1 g#Problem2 *,
+object#map svg#Ebene_1 g#Problem3 *,
+object#map svg#Ebene_1 g#Problem4 *,
+object#map svg#Ebene_1 g#Problem5 *,
+object#map svg#Ebene_1 g#Problem6 * {
+  opacity: 0 !important;
+  fill-opacity: 0;
+  fill: red;
+}
