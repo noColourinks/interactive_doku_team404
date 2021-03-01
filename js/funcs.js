@@ -9,27 +9,28 @@ function calcAnimationOnScrollProgress() {
   );
 }
 
-$(document).ready(function () {
-  $("object#map")
-    .contents()
-    .find(".Problem")
-    .each(function () {
-      console.log(this);
-    });
-
-  console.log($("object#map").contents().find());
-});
-
 $(window).scroll(function () {
-  // console.log($(this).scrollTop() + $(window).height());
-
   if ($(this).scrollTop() >= pageOffset / 2) {
     $("#car").css("offset-distance", calcAnimationOnScrollProgress() + "%");
   }
 
+  if (calcAnimationOnScrollProgress() >= 6) {
+    $("#Problem1").css("opacity", "1");
+    $("#Problem1").css("visibility", "visible");
+  } else {
+    $("#Problem1").css("opacity", "0");
+  }
   if ($(this).scrollTop() + $(window).height() === documentHeight) {
     $("#car").css("offset-distance", "100%");
   }
+});
+
+$(document).ready(function () {
+  $(".problem").click(function () {
+    let ID = $(this).attr("id");
+    console.log(ID);
+    $(".nav").addClass(ID + "_open");
+  });
 });
 
 // console.log(scrollTop);
