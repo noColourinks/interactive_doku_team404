@@ -1,5 +1,7 @@
 import dataControll from "./data_controll.js";
 import Map from "./leaflet_classes/map.js";
+import Ride from "./ride.js";
+import Problems from "./problems.js";
 let mySessionMap = new Map("my_way_map");
 let myProblemMap = new Map("my_problem_map");
 
@@ -21,57 +23,66 @@ function triggerLoad(section, params) {
     case "my_session":
       mySessionMap.newMap([{ lat: 49, lng: 8 }], 15);
       console.log(dataControll);
-      dataControll.getRideData(params).then((ride) => {
-        lastRideData.ride = ride;
+      let ride = Ride;
+      // dataControll.getRideData(params).then((ride) => {
 
-        generateRoute(mySessionMap, ride);
-        generateRideMetaData(ride);
+      // generateRoute(mySessionMap, ride);
+      generateRideMetaData(ride);
 
-        //Straßentypen Chart
-        let contextMySessionsProblems = $(
-          "#chart_my_sessions_road_information"
-        );
-        let contextGradient = contextMySessionsProblems[0].getContext("2d");
-        let my_gradient = contextGradient.createLinearGradient(100, 0, 320, 0);
-        my_gradient.addColorStop(0, "rgba(0, 255, 246, 0.1)");
-        my_gradient.addColorStop(1, "rgba(0, 255, 246, 1)");
+      //Straßentypen Chart
+      let contextMySessionsInformation = $(
+        "#chart_my_sessions_road_information"
+      );
+      let contextGradientInformation = contextMySessionsInformation[0].getContext(
+        "2d"
+      );
+      let my_gradientInformation = contextGradientInformation.createLinearGradient(
+        100,
+        0,
+        320,
+        0
+      );
+      my_gradientInformation.addColorStop(0, "rgba(0, 255, 246, 0.1)");
+      my_gradientInformation.addColorStop(1, "rgba(0, 255, 246, 1)");
 
-        if (charts["chartMySessionsRoadInformation"])
-          charts["chartMySessionsRoadInformation"].destroy();
-        let chartData = countObjectForChart(JSON.parse(ride.road_types));
-        chartData.strings = translateStreetNames(chartData.strings);
-        let chartSessionsProblems = drawHorizontalBarChart(
-          contextMySessionsProblems,
-          chartData,
-          "Straßentypen",
-          my_gradient
-          // "rgba(15, 81, 89, 1)"
-        );
-        charts["chartMySessionsRoadInformation"] = chartSessionsProblems;
-      });
-      dataControll.getProblems(params).then((problems) => {
-        lastRideData.problems = problems;
-        //Kartenproblemmarker generieren.
-        generateProblems(mySessionMap, problems);
+      if (charts["chartMySessionsRoadInformation"])
+        charts["chartMySessionsRoadInformation"].destroy();
+      let chartData = countObjectForChart(JSON.parse(ride.road_types));
+      let chartSessionsInfromation = drawHorizontalBarChart(
+        contextMySessionsInformation,
+        chartData,
+        "Straßentypen",
+        my_gradientInformation
+        // "rgba(15, 81, 89, 1)"
+      );
+      charts["chartMySessionsRoadInformation"] = chartSessionsInfromation;
+      // });
 
-        //ProblemChart
-        let contextMySessionsProblems = $("#chart_my_sessions_problems");
-        let contextGradient = contextMySessionsProblems[0].getContext("2d");
-        let my_gradient = contextGradient.createLinearGradient(100, 0, 320, 0);
-        my_gradient.addColorStop(0, "rgba(0, 255, 246, 0.1)");
-        my_gradient.addColorStop(1, "rgba(0, 255, 246, 1)");
+      //Probleme
 
-        if (charts["chartSessionsProblems"])
-          charts["chartSessionsProblems"].destroy();
-        let chartSessionsProblems = drawHorizontalBarChart(
-          contextMySessionsProblems,
-          countArrayObjectForChart(problems, "situation_tag"),
-          "Probleme",
-          my_gradient
-          // "rgba(15, 81, 89, 1)"
-        );
-        charts["chartSessionsProblems"] = chartSessionsProblems;
-      });
+      let problems = Problems;
+      // dataControll.getProblems(params).then((problems) => {
+      //Kartenproblemmarker generieren.
+      // generateProblems(mySessionMap, problems);
+
+      //ProblemChart
+      let contextMySessionsProblems = $("#chart_my_sessions_problems");
+      let contextGradient = contextMySessionsProblems[0].getContext("2d");
+      let my_gradient = contextGradient.createLinearGradient(100, 0, 320, 0);
+      my_gradient.addColorStop(0, "rgba(0, 255, 246, 0.1)");
+      my_gradient.addColorStop(1, "rgba(0, 255, 246, 1)");
+
+      if (charts["chartSessionsProblems"])
+        charts["chartSessionsProblems"].destroy();
+      let chartSessionsProblems = drawHorizontalBarChart(
+        contextMySessionsProblems,
+        countArrayObjectForChart(problems, "situation_tag"),
+        "Probleme",
+        my_gradient
+        // "rgba(15, 81, 89, 1)"
+      );
+      charts["chartSessionsProblems"] = chartSessionsProblems;
+      // });
       break;
   }
 }
@@ -86,17 +97,17 @@ function generateRoute(map, ride) {
   console.log(route);
 }
 
-function generateProblems(map, problems) {
-  problems.forEach((problem) => {
-    map.addEventMarker(
-      { lat: problem.latitude, lng: problem.longitude },
-      problem.situation_tag,
-      "problem",
-      switchProblenSection,
-      { newSection: "my_problem", parameter: problem }
-    );
-  });
-}
+// function generateProblems(map, problems) {
+//   problems.forEach((problem) => {
+//     map.addEventMarker(
+//       { lat: problem.latitude, lng: problem.longitude },
+//       problem.situation_tag,
+//       "problem",
+//       switchProblenSection,
+//       { newSection: "my_problem", parameter: problem }
+//     );
+//   });
+// }
 
 // Hier gehts richtig ab :)
 

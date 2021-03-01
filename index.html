@@ -13,6 +13,19 @@
     <script src="./speed_minigame/lib/p5.min.js" defer></script>
     <script src="./speed_minigame/src/p5setup.js" type="module"></script>
     <script src="./speed_minigame/game/scetch.js" type="module"></script>
+
+    <!-- Prototyp Links -->
+    <link rel="stylesheet" href="./prototyp_learnings/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="./prototyp_learnings/js/src/leaflet/leaflet.css"
+    />
+    <link rel="stylesheet" href="./prototyp_learnings/css/templates.css" />
+
+    <script src="./prototyp_learnings/js/src/leaflet/leaflet.js"></script>
+    <script src="./prototyp_learnings/js/src/chart_js/Chart.js"></script>
+
+    <!--  -->
     <title>Fahrtagebuch</title>
   </head>
   <body>
@@ -110,8 +123,82 @@
         <div class="grid_right"></div>
       </div>
     </section>
-    <section id="team"></section>
-
+    <section id="team">
+      <div class="smartphone_border"></div>
+      <section id="content">
+        <section id="my_session" class="on_screen">
+          <div class="charts">
+            <div id="my_way_map"></div>
+          </div>
+          <div class="bread_crumb">
+            <p>
+              <a class="nav_element |landing_page|">Home</a> >
+              <b><a class="nav_element |my_sessions|">meine Fahrten</a></b> >
+              <b>20.01.2020</b>
+            </p>
+          </div>
+          <div class="grid_container">
+            <div class="grid_full button">
+              <h2>Experten anfragen</h2>
+            </div>
+            <div class="grid_full white">
+              <h2>Diagramm für allgemeine Probleme</h2>
+            </div>
+            <div class="grid_full">
+              <div class="charts"><canvas id="chart_my_sessions_problems" width="360" height="480"></div>
+            </div>
+            <div id="session_time"class="grid_full flex white">
+              <p>10:15 bis 11:00</p>
+              <p>Dauer: 00:45h</p>
+            </div>
+            <div id="session_light_conditions" class="grid_left light_conditions white">
+            </div>
+            <div id="session_weather" class="grid_right weather">
+            </div>
+            <div class="grid_full road_information">
+              <div class="charts"><div class="charts"><canvas id="chart_my_sessions_road_information" width="360" height="480"></div></div>
+            </div>
+        </section>
+  
+        <div id="nav" class="">
+          <div class="nav_bar">
+            <div class="menu toggle_nav">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div id="profile" class="icon nav_element |landing_page|"></div>
+          </div>
+  
+          <div class="openNav">
+            <div id="nav_open_content">
+              <div class="profile icon"></div>
+              <div class="grid_container">
+                <div class="grid_full nav_element |landing_page| toggle_nav">
+                  <p>Startseite</p>
+                </div>
+                <div class="grid_full nav_element |my_sessions| toggle_nav">
+                  <p>Meine Fahrten</p>
+                </div>
+                <div
+                  class="grid_full nav_element |my_problem_statistics| toggle_nav"
+                >
+                  <p>Problemstatistik</p>
+                </div>
+                <div class="grid_full nav_element |experts|"><p>Experten</p></div>
+                <div class="grid_full nav_element |formular|">
+                  <p>Persönliches Formular</p>
+                </div>
+                <div class="grid_full nav_element |data_policy|">
+                  <p>Datenschutz</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script src="./prototyp_learnings/js/navigation.js"  type="module"></script>
+    </section>
     <script src="node_modules/meanderer/dist/meanderer.min.js"></script>
     <script src="./js/funcs.js"></script>
   </body>
