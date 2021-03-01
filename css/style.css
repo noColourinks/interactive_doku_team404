@@ -252,6 +252,10 @@ section#landing {
 
 /****** one session ******/
 
+#one_session {
+  position: relative;
+}
+
 #one_session .grid_container {
   margin-left: 78px;
 }
@@ -289,4 +293,12 @@ section#landing {
   width: 50px;
   height: 50px;
   background-image: url(../img/arrow.svg);
+}
+
+.arrow.right {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
 }
