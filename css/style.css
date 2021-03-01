@@ -8,11 +8,6 @@
   src: url("../assets/fonts/Comfortaa-Regular.ttf") format("truetype");
 }
 
-@font-face {
-  font-family: "Comfortaa Bold";
-  src: url("../assets/fonts/Comforta-Black.ttf") format("truetype");
-}
-
 ::-webkit-scrollbar {
   display: none;
 }
@@ -54,6 +49,13 @@ h3 {
   font-size: 1.5em;
   font-family: "Roboto Black";
   line-height: 1;
+}
+
+h4 {
+  font-size: 0.8em;
+  font-family: "Comfortaa Regular";
+  line-height: 1;
+  color: #fff;
 }
 
 p {
@@ -157,7 +159,7 @@ section#landing {
   width: 20vw;
 }
 
-#introducing .grid_right p {
+.column_two {
   column-count: 2;
 }
 
@@ -166,7 +168,7 @@ section#landing {
 .problem_answer {
   position: absolute;
   background-color: #e0595a;
-  padding: 80px 20px 30px;
+  padding: 30px 20px 30px;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -175,12 +177,28 @@ section#landing {
 }
 
 .problem_answer h2,
-.problem_answer h3,
 .problem_answer p {
   color: #fff;
+}
+
+.problem_answer h2 {
+  margin-bottom: 20px;
 }
 
 .close {
   background-image: url(../img/close.svg);
   height: 30px;
+  display: block;
+  width: 30px;
+  float: right;
+}
+
+.problem {
+  background-image: url(../img/spot.svg);
+  height: 197.4px;
+  width: 197.4px;
+  position: absolute;
+  z-index: 2;
+  top: 573px;
+  left: -83px;
 }

@@ -12,20 +12,27 @@
   <body>
     <div class="nav">
       <div>
-        <object id="map" type="image/svg+xml" data="img/map.svg">
-          <style>
-            .Problem {
-              opacity: 0;
-            }
-          </style>
-        </object>
+        <div class="problem img" id="Problem1"></div>
+        <object id="map" type="image/svg+xml" data="img/map.svg"></object>
         <div id="car" class="img"></div>
       </div>
     </div>
 
     <section id="landing">
-      <div id="my-botui-app" class="conversation">
-        <bot-ui></bot-ui>
+      <div class="conversation bot">
+        <div class="bubble right first">
+          <p></p>
+        </div>
+        <div class="bubble right second">
+          <p></p>
+        </div>
+      </div>
+      <div class="answer user">
+        <div class="bubble left">
+          <a href="#introducing"><p>... Keine Ahnung</p></a>
+          <a href="#trailer"><p>Strell dich erstmal vor</p></a>
+          <a href="#data"><p>Ich will mehr über meine Daten wissen</p></a>
+        </div>
       </div>
     </section>
     <section id="introducing" class="">
@@ -33,7 +40,7 @@
         <div class="grid_left img logo"></div>
         <div class="grid_right">
           <h1>Einführung</h1>
-          <p>
+          <p class="column_two">
             Im Laufe unseres Projektes stießen wir auf ein Zeitproblem in der
             Fahrausbildung.<br /><br />
 
@@ -54,10 +61,10 @@
         </div>
       </div>
       <div class="problem_answer">
-        <h3>Learing Nr. 01</h3>
+        <div class="close img"></div>
+        <h4>Learing Nr. 01</h4>
         <h2>Reverse Ingeneuring</h2>
         <p>Wir waren ganz schön big Smart</p>
-        <div class="close img"></div>
       </div>
     </section>
     <section id="trailer"></section>
@@ -68,6 +75,5 @@
 
     <script src="node_modules/meanderer/dist/meanderer.min.js"></script>
     <script src="./js/funcs.js"></script>
-    <link rel="stylesheet" href="./css/svg.css" />
   </body>
 </html>

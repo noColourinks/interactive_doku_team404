@@ -9,6 +9,17 @@ function calcAnimationOnScrollProgress() {
   );
 }
 
+$(document).ready(function () {
+  $("object#map")
+    .contents()
+    .find(".Problem")
+    .each(function () {
+      console.log(this);
+    });
+
+  console.log($("object#map").contents().find());
+});
+
 $(window).scroll(function () {
   // console.log($(this).scrollTop() + $(window).height());
 
