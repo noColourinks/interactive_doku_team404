@@ -34,7 +34,7 @@ function draw() {
     textFont(comfortaa);
     textLeading(52);
     text(
-      "Start das Spiel mit Leertaste.\nBremse mit Leertaste.",
+      "Starte das Spiel mit B.\nBremse mit B.",
       width / 2 - 250,
       height / 2 - 25,
       500,
@@ -117,7 +117,7 @@ function keyPressed() {
 window.keyPressed = keyPressed;
 
 function keyReleased() {
-  if (keyCode === 32) {
+  if (keyCode === 66) {
     switchState("game");
   }
   if (world instanceof InteractiveObject) {
