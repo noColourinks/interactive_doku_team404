@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="./leavejet.css" />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <script src="../demo_data/coords.js"></script>
+  </head>
+  <body>
+    <div id="mapid"></div>
+    <script>
+      //Leavelet Map setup
+      var mymap = L.map("mapid").setView([coords[0][1], coords[0][0]], 15);
+
+      //Kartenlayer setup
+      L.tileLayer(
+        "https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=oDMVjeHn0MSvjzCPq7Rv",
+        {
+          attribution:
+            '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a></a>',
+          maxZoom: 18,
+          id: "mapbox/streets-v11",
+          tileSize: 512,
+          zoomOffset: -1,
+          accessToken: "your.mapbox.access.token",
+        }
+      ).addTo(mymap);
+
+      let markerStart = L.marker([coords[0][1], coords[0][0]]).addTo(mymap);
+      markerStart.bindPopup("<b>Start</b><br>Startpunkt der Messung.");
+
+      let end = L.marker([
+        coords[coords.length - 1][1],
+        coords[coords.length - 1][0],
+      ]).addTo(mymap);
+      end.bindPopup("<b>Ende</b><br>Endpunkt der Messung.");
+
+      let problem = L.marker([coords[11][1], coords[11][0]]).addTo(mymap);
+      problem.bindPopup("<b>Kurvenfahrt</b><br>Lenkmuster ist nicht stabil.");
+
+      problem.on("click", () => {
+        console.log("Hey Problem!");
+      });
+      if (coords.length > 0) {
+        for (let i = 1; i < coords.length; i++) {
+          var polygon = L.polyline([
+            [coords[i - 1][1], coords[i - 1][0]],
+            [coords[i][1], coords[i][0]],
+          ]).addTo(mymap);
+        }
+      }
+    </script>
+  </body>
+</html>

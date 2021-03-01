@@ -1,0 +1,272 @@
+/********** Landingpage ***********/
+
+.grid_container > div.grid_left,
+.grid_container > div.grid_right {
+  min-height: 70px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.grid_container > div.extraHeight {
+  min-height: 100px;
+}
+
+#landing_page .grid_container > div:nth-child(2) {
+  background-image: url(../assets/img/my_rides.svg);
+}
+
+#landing_page .grid_container > div:nth-child(3) {
+  background-image: url(../assets/img/problem_stats.svg);
+  background-position-y: -15px;
+}
+
+#landing_page .grid_container > div:nth-child(5) {
+  background-image: url(../assets/img/my_questions.svg);
+  background-position: center;
+}
+
+/********** my Sessions ***********/
+
+section#my_sessions {
+  padding-top: 50px;
+}
+
+section#my_questions {
+  padding-top: 50px;
+}
+
+section#my_sessions .grid_full {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.bread_crumb {
+  padding: 0px 30px;
+}
+
+.bread_crumb a,
+.bread_crumb p {
+  font-size: 0.8rem;
+  color: rgb(15, 81, 89);
+}
+
+.bread_crumb b {
+  font-weight: bolder;
+  font-size: 0.8rem;
+  color: rgb(15, 81, 89);
+}
+
+/*********  my problems statistic *********/
+
+section#my_problem_statistics > .charts {
+  height: 680px;
+}
+section#my_problem_statistics > .charts > h2 {
+  position: absolute;
+  top: 80px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+#switch_chart_next,
+#switch_chart_back {
+  position: absolute;
+  top: 70px;
+  margin: 0 auto;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  background-image: url("../assets/img/circle_arrow_left_white.svg");
+  cursor: pointer;
+}
+#switch_chart_back {
+  left: 10px;
+}
+
+#switch_chart_next {
+  right: 10px;
+  transform: scaleX(-1);
+}
+
+/*********  icons *********/
+
+div.weather {
+  background: transparent;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.weather * {
+  color: rgb(15, 81, 89);
+}
+
+.weather > .icon {
+  background-image: url(../assets/img/weather/sonnig.svg);
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.weather > .icon.sonnig {
+  background-image: url(../assets/img/weather/sonnig.svg);
+}
+.weather > .icon.wolkig {
+  background-image: url(../assets/img/weather/wolkig.svg);
+}
+.weather > .icon.regen {
+  background-image: url(../assets/img/weather/regen.svg);
+}
+.weather > .icon.hagel {
+  background-image: url(../assets/img/weather/hagel.svg);
+}
+.weather > .icon.schnee {
+  background-image: url(../assets/img/weather/schnee.svg);
+}
+.weather > .icon.nebel {
+  background-image: url(../assets/img/weather/nebel.svg);
+}
+.weather > .icon.hurricane {
+  background-image: url(../assets/img/weather/hurricane.svg);
+}
+.weather > .icon.eis {
+  background-image: url(../assets/img/weather/eis.svg);
+}
+.weather > .icon.meteor {
+  background-image: url(../assets/img/weather/meteor.svg);
+}
+
+.light_conditions > .icon {
+  height: 50px;
+  width: 70px;
+  margin-right: 10px;
+}
+
+#session_light_conditions > .icon.dämmerlicht {
+  background-image: url(../assets/img/weather/wolkig.svg);
+}
+
+#session_light_conditions > .icon.tageslicht {
+  background-image: url(../assets/img/weather/sonnig.svg);
+}
+
+#session_light_conditions > .icon.leichte_dunkelheit {
+  background-image: url(../assets/img/weather/nebel.svg);
+}
+
+#session_light_conditions > .icon.starke_dunkelheit {
+  background-image: url(../assets/img/weather/nacht.svg);
+}
+
+#my_problem_light_conditions > .icon.dämmerlicht {
+  background-image: url(../assets/img/weather/wolkig.svg);
+}
+
+#my_problem_light_conditions > .icon.tageslicht {
+  background-image: url(../assets/img/weather/sonnig.svg);
+}
+
+#my_problem_light_conditions > .icon.leichte_dunkelheit {
+  background-image: url(../assets/img/weather/nebel.svg);
+}
+
+#my_problem_light_conditions > .icon.starke_dunkelheit {
+  background-image: url(../assets/img/weather/nacht.svg);
+}
+
+#landing_weather p {
+  padding-right: 10px;
+}
+
+#landing_weather .icon {
+  margin-right: 0px;
+}
+
+.formular h3 {
+  margin-top: 20px;
+}
+
+#landing_page .grid_container.formular > div.button {
+  background-image: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 10px 0;
+}
+
+.slide {
+  width: 100%;
+  height: 7px;
+  background: rgba(0, 255, 246, 1);
+  background: linear-gradient(
+    38deg,
+    rgba(206, 56, 63, 1) 0%,
+    rgba(242, 178, 30, 1) 50%,
+    rgba(0, 255, 246, 1) 100%
+  );
+  border-radius: 10px;
+  margin: 15px 0 5px 0;
+  position: relative;
+  border: 1px solid #fff;
+}
+
+.slide:before {
+  position: absolute;
+  content: " ";
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  top: -7px;
+  left: 60%;
+}
+
+.slide_description {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.slide_description p {
+  font-size: 0.8rem;
+}
+
+/*** start_session ***/
+
+section#start_session {
+  background-color: #1c515e;
+  margin-top: 0px;
+  height: 100%;
+}
+
+svg path.cls-3 {
+  fill: #fff;
+}
+
+#start_session object {
+  height: 500px;
+  width: 500px;
+  margin-left: -40px;
+  margin-top: 130px;
+}
+
+#start_session .text p {
+  text-align: center;
+}
+
+#start_session .text {
+  bottom: 20px;
+  position: absolute;
+  width: 100%;
+}
+/*** my_question ***/
+section#my_questions .grid_full {
+  display: flex;
+  justify-content: space-between;
+}
+
+#my_problem_weather {
+  max-width: 126px;
+}
