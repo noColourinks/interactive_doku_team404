@@ -1,8 +1,8 @@
 .responsive_video {
   position: relative;
-  padding-bottom: 56.25%; /* Default for 1600x900 videos 16:9 ratio*/
+  padding-bottom: 56.25%;
   padding-top: 0px;
-  width: calc(100% - 475px);
+  width: calc(100% - 510px);
   margin-left: 30px;
   height: 0;
   overflow: hidden;

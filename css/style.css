@@ -107,7 +107,7 @@ section {
   background-position: center center;
 }
 
-.nav {
+.nav_map {
   height: 6569.7002px;
   position: absolute;
   width: 444.6px;
@@ -115,15 +115,15 @@ section {
   top: 100vh;
 }
 
-.nav > div {
+.nav_map > div {
   position: relative;
 }
 
-.nav #map {
+.nav_map #map {
   position: absolute;
 }
 
-.nav #car {
+.nav_map #car {
   background-image: url(../img/tictac_car.svg);
   offset-path: path(var(--path));
   offset-distance: 0%;
@@ -167,7 +167,7 @@ section#landing {
 
 .problem_answer {
   position: absolute;
-  background-color: #ffffff00;
+  background-color: #e0595a;
   padding: 30px 20px 30px;
   border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -175,14 +175,12 @@ section#landing {
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
   z-index: 3;
-  border: 3px solid #e0595a;
-  backdrop-filter: blur(3px);
 }
 
 .problem_answer h2,
 .problem_answer h4,
 .problem_answer p {
-  color: #e0595a;
+  color: #fff;
 }
 
 .problem_answer h2 {
@@ -191,10 +189,11 @@ section#landing {
 
 .close {
   background-image: url(../img/close.svg);
-  height: 30px;
+  height: 20px;
   display: block;
   width: 30px;
   float: right;
+  cursor: pointer;
 }
 
 .problem {
@@ -233,12 +232,61 @@ section#landing {
   -o-transition: opacity 1s ease-in-out 1s, transform 0.3s ease-in-out;
 }
 
-.one {
-  top: 620px;
-  left: -289px;
+#Problem1_answer {
+  top: 550px;
+  right: -340px;
+  opacity: 1;
   opacity: 0;
+  transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+  -webkit-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+  -moz-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+  -ms-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+  -o-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
 }
 
-.nav.Problem1_open .one {
+.nav_map.Problem1_answer #Problem1_answer {
   opacity: 1;
+  right: 20px;
+  transition: right 1s ease-in-out, opacity 0.3 ease-in-out;
+}
+
+/****** one session ******/
+
+#one_session .grid_container {
+  margin-left: 78px;
+}
+
+.gallery_box {
+  width: calc(100vw - 600px);
+  overflow: hidden;
+  position: relative;
+  height: 70vh;
+}
+
+.gallery {
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.element .icon {
+  height: 250px;
+  width: 250px;
+  background-color: #0f5159;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  margin-right: 50px;
+}
+
+.element h2,
+.element p {
+  text-align: center;
+  width: 250px;
+}
+
+.arrow {
+  width: 50px;
+  height: 50px;
+  background-image: url(../img/arrow.svg);
 }

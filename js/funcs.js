@@ -29,7 +29,12 @@ $(document).ready(function () {
   $(".problem").click(function () {
     let ID = $(this).attr("id");
     console.log(ID);
-    $(".nav").addClass(ID + "_open");
+    $(".nav_map").addClass(ID + "_answer");
+  });
+
+  $(".close").click(function () {
+    let parent = $(this).parent().attr("id");
+    $(".nav_map").removeClass(parent);
   });
 });
 
