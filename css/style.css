@@ -112,7 +112,9 @@ section {
   position: absolute;
   width: 444.6px;
   right: 0px;
-  top: 100vh;
+  top: calc(100vh + 20px);
+  transform: scale(0.85);
+  transform-origin: top;
 }
 
 .nav_map > div {
@@ -289,4 +291,12 @@ section#landing {
   width: 50px;
   height: 50px;
   background-image: url(../img/arrow.svg);
+}
+
+/***** ********/
+
+@media only screen and (max-width: 1200px) {
+  .column_two {
+    column-count: 1;
+  }
 }
