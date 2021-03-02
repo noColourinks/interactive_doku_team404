@@ -1,0 +1,20 @@
+brake_pattern: null
+extended_subjective_assessment: null
+id: 168
+latitude: 49.85332
+longitude: 8.64671
+ride_id: 6
+road_surface: null
+road_type: null
+situation_tag: "Kreuzung"
+steering_pattern: null
+stress_result: null
+subjective_assessment: null
+time: null
+velocity: null
+1: {id: 169, ride_id: 6, stress_result: null, steering_pattern: null, brake_pattern: null, …}
+2: {id: 170, ride_id: 6, stress_result: null, steering_pattern: null, brake_pattern: null, …}
+3: {id: 171, ride_id: 6, stress_result: null, steering_pattern: null, brake_pattern: null, …}
+4: {id: 172, ride_id: 6, stress_result: null, steering_pattern: null, brake_pattern: null, …}
+5: {id: 173, ride_id: 6, stress_result: null, steering_pattern: null, brake_pattern: null, …}
+6: {id: 174, ride_id: 6, stress_result: null, steering_pattern: null, brake_pattern: null, …}

@@ -1,0 +1,153 @@
+/********** Landingpage ***********/
+
+.grid_container_prototyp > div.grid_left_prototyp,
+.grid_container_prototyp > div.grid_right_prototyp {
+  min-height: 70px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.grid_container_prototyp > div.extraHeight {
+  min-height: 100px;
+}
+/********** my Sessions ***********/
+
+.bread_crumb {
+  padding: 0px 30px;
+}
+
+.bread_crumb a,
+.bread_crumb p {
+  font-size: 0.8rem;
+  color: rgb(15, 81, 89);
+}
+
+.bread_crumb b {
+  font-weight: bolder;
+  font-size: 0.8rem;
+  color: rgb(15, 81, 89);
+}
+
+/*********  my problems statistic *********/
+
+/*********  icons *********/
+
+div.weather {
+  background: transparent;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.weather * {
+  color: rgb(15, 81, 89);
+}
+
+.weather > .icon {
+  background-image: url(../assets/img/weather/sonnig.svg);
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.weather > .icon.sonnig {
+  background-image: url(../assets/img/weather/sonnig.svg);
+}
+.weather > .icon.wolkig {
+  background-image: url(../assets/img/weather/wolkig.svg);
+}
+.weather > .icon.regen {
+  background-image: url(../assets/img/weather/regen.svg);
+}
+.weather > .icon.hagel {
+  background-image: url(../assets/img/weather/hagel.svg);
+}
+.weather > .icon.schnee {
+  background-image: url(../assets/img/weather/schnee.svg);
+}
+.weather > .icon.nebel {
+  background-image: url(../assets/img/weather/nebel.svg);
+}
+.weather > .icon.hurricane {
+  background-image: url(../assets/img/weather/hurricane.svg);
+}
+.weather > .icon.eis {
+  background-image: url(../assets/img/weather/eis.svg);
+}
+.weather > .icon.meteor {
+  background-image: url(../assets/img/weather/meteor.svg);
+}
+
+.light_conditions > .icon {
+  height: 50px;
+  width: 70px;
+  margin-right: 10px;
+}
+
+#session_light_conditions > .icon.dämmerlicht {
+  background-image: url(../assets/img/weather/wolkig.svg);
+}
+
+#session_light_conditions > .icon.tageslicht {
+  background-image: url(../assets/img/weather/sonnig.svg);
+}
+
+#session_light_conditions > .icon.leichte_dunkelheit {
+  background-image: url(../assets/img/weather/nebel.svg);
+}
+
+#session_light_conditions > .icon.starke_dunkelheit {
+  background-image: url(../assets/img/weather/nacht.svg);
+}
+
+#my_problem_light_conditions > .icon.dämmerlicht {
+  background-image: url(../assets/img/weather/wolkig.svg);
+}
+
+#my_problem_light_conditions > .icon.tageslicht {
+  background-image: url(../assets/img/weather/sonnig.svg);
+}
+
+#my_problem_light_conditions > .icon.leichte_dunkelheit {
+  background-image: url(../assets/img/weather/nebel.svg);
+}
+
+#my_problem_light_conditions > .icon.starke_dunkelheit {
+  background-image: url(../assets/img/weather/nacht.svg);
+}
+
+#landing_weather p {
+  padding-right: 10px;
+}
+
+#landing_weather .icon {
+  margin-right: 0px;
+}
+
+.formular h3 {
+  margin-top: 20px;
+}
+
+.slide:before {
+  position: absolute;
+  content: " ";
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  top: -7px;
+  left: 60%;
+}
+
+.slide_description {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.slide_description p {
+  font-size: 0.8rem;
+}

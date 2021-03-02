@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./js/src/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="./css/templates.css" />
+
+    <script src="./js/src/leaflet/leaflet.js"></script>
+    <script src="./js/src/chart_js/Chart.js"></script>
+    <title>Landingpage</title>
+  </head>
+  <body>
+    <div class="smartphone_border"></div>
+    <section id="content">
+      <section id="my_session" class="on_screen">
+        <div class="charts">
+          <div id="my_way_map"></div>
+        </div>
+        <div class="bread_crumb">
+          <p>
+            <a class="nav_element |landing_page|">Home</a> >
+            <b><a class="nav_element |my_sessions|">meine Fahrten</a></b> >
+            <b>20.01.2020</b>
+          </p>
+        </div>
+        <div class="grid_container">
+          <div class="grid_full button">
+            <h2>Experten anfragen</h2>
+          </div>
+          <div class="grid_full white">
+            <h2 class="blue">Diagramm für allgemeine Probleme</h2>
+          </div>
+          <div class="grid_full">
+            <div class="charts"><canvas id="chart_my_sessions_problems" width="360" height="480"></div>
+          </div>
+          <div id="session_time"class="grid_full flex white">
+            <p>10:15 bis 11:00</p>
+            <p>Dauer: 00:45h</p>
+          </div>
+          <div id="session_light_conditions" class="grid_left light_conditions white">
+          </div>
+          <div id="session_weather" class="grid_right weather">
+          </div>
+          <div class="grid_full road_information">
+            <div class="charts"><div class="charts"><canvas id="chart_my_sessions_road_information" width="360" height="480"></div></div>
+          </div>
+      </section>
+
+      <div id="nav" class="">
+        <div class="nav_bar">
+          <div class="menu toggle_nav">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div id="profile" class="icon nav_element |landing_page|"></div>
+        </div>
+
+        <div class="openNav">
+          <div id="nav_open_content">
+            <div class="profile icon"></div>
+            <div class="grid_container">
+              <div class="grid_full nav_element |landing_page| toggle_nav">
+                <p>Startseite</p>
+              </div>
+              <div class="grid_full nav_element |my_sessions| toggle_nav">
+                <p>Meine Fahrten</p>
+              </div>
+              <div
+                class="grid_full nav_element |my_problem_statistics| toggle_nav"
+              >
+                <p>Problemstatistik</p>
+              </div>
+              <div class="grid_full nav_element |experts|"><p>Experten</p></div>
+              <div class="grid_full nav_element |formular|">
+                <p>Persönliches Formular</p>
+              </div>
+              <div class="grid_full nav_element |data_policy|">
+                <p>Datenschutz</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./js/navigation.js"  type="module"></script>
+  </body>
+</html>

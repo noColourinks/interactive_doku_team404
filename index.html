@@ -13,6 +13,19 @@
     <script src="./speed_minigame/lib/p5.min.js" defer></script>
     <script src="./speed_minigame/src/p5setup.js" type="module"></script>
     <script src="./speed_minigame/game/scetch.js" type="module"></script>
+
+    <!-- Prototyp Links -->
+    <link rel="stylesheet" href="./prototyp_learnings/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="./prototyp_learnings/js/src/leaflet/leaflet.css"
+    />
+    <link rel="stylesheet" href="./prototyp_learnings/css/templates.css" />
+
+    <script src="./prototyp_learnings/js/src/leaflet/leaflet.js"></script>
+    <script src="./prototyp_learnings/js/src/chart_js/Chart.js"></script>
+
+    <!--  -->
     <title>Fahrtagebuch</title>
   </head>
   <body>
@@ -160,8 +173,85 @@
         <div class="grid_right"></div>
       </div>
     </section>
-    <section id="team"></section>
-
+    <section id="team">
+      <div class="grid_container">
+        <div class="grid_full relative">
+          <div class="smartphone_border">
+            <div id="content">
+              <div id="my_session" class="on_screen">
+                <div class="charts">
+                  <div id="my_way_map"></div>
+                </div>
+                <div class="bread_crumb">
+                  <p>
+                    <a class="nav_element |landing_page|">3. Semester</a> >
+                    <b><a class="nav_element |my_sessions|">Unsere Projektfahrt</a></b> >
+                    <b>Stand 05.03.2021</b>
+                  </p>
+                </div>
+                <div class="grid_container_prototyp">
+                  <div class="grid_full_prototyp button_prototyp">
+                    <h2>Experten anfragen</h2>
+                  </div>
+                  <div class="grid_full_prototyp white">
+                    <h2 id="blue_headline_special">Diagramm für allgemeine Probleme</h2>
+                  </div>
+                  <div class="grid_full_prototyp">
+                    <div class="charts"><canvas id="chart_my_sessions_problems" width="360" height="480"></div>
+                  </div>
+                  <div id="session_time"class="grid_full_prototyp flex white">
+                    <p>05.11.2020 bis 25.02.2021</p>
+                    <p>Dauer: 00:45h</p>
+                  </div>
+                  <div id="session_light_conditions" class="grid_left_prototyp light_conditions white"></div>
+                  <div id="session_weather" class="grid_right_prototyp weather"></div>
+                  <div class="grid_full_prototyp road_information">
+                    <div class="charts"><div class="charts"><canvas id="chart_my_sessions_road_information" width="360" height="480"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="nav" class="">
+            <div class="nav_bar">
+              <div class="menu toggle_nav">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div id="profile" class="icon nav_element |landing_page|"></div>
+            </div> 
+            <div class="openNav">
+              <div id="nav_open_content">
+                <div class="profile icon"></div>
+                <div class="grid_container">
+                  <div class="grid_full nav_element |landing_page| toggle_nav">
+                    <p>Startseite</p>
+                  </div>
+                  <div class="grid_full nav_element |my_sessions| toggle_nav">
+                    <p>Meine Fahrten</p>
+                  </div>
+                  <div class="grid_full nav_element |my_problem_statistics| toggle_nav">
+                    <p>Problemstatistik</p>
+                  </div>
+                  <div class="grid_full nav_element |experts|">
+                    <p>Experten</p>
+                  </div>
+                  <div class="grid_full nav_element |formular|">
+                    <p>Persönliches Formular</p>
+                  </div>
+                  <div class="grid_full nav_element |data_policy|">
+                    <p>Datenschutz</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+    <script src="./prototyp_learnings/js/navigation.js"  type="module"></script>
     <script src="node_modules/meanderer/dist/meanderer.min.js"></script>
     <script src="./js/funcs.js"></script>
   </body>
