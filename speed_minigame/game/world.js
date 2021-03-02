@@ -48,10 +48,10 @@ export default class World extends InteractiveObject {
   checkSweetSpot(pos) {
     if (pos.x + 310 < this.sweetSpot.xRight) {
       this.winText =
-        "Vor der Ampel angehalten!\nDrücke B oder klick um neuzustarten.";
+        "Vor der Ampel angehalten!\nDrücke B oder klicke um neuzustarten.";
     } else {
       this.winText =
-        "Über der Haltelinie!\nDrücke B oder klick um neuzustarten.";
+        "Über der Haltelinie!\nDrücke B oder klicke um neuzustarten.";
     }
     this.end = 1;
   }

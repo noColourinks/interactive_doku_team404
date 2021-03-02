@@ -36,7 +36,7 @@ function draw() {
     textFont(comfortaa);
     textLeading(62);
     text(
-      "Starte die Simulation mit B/ klick.\nBremse mit B/ klick auf die Bremse.",
+      "Starte die Simulation mit B/ klicke.\nBremse mit B/ klicke auf die Bremse.",
       width / 2 - 250,
       height / 2 - 25,
       500,
