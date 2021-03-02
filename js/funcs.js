@@ -1,9 +1,9 @@
-const galleryElementMargin = parseInt(
+let galleryElementMargin = parseInt(
   $("#gallery").children().css("margin-right")
 );
-const galleryElementWidth = parseInt($("#gallery").children().css("width"));
-const galleryNextStep = galleryElementMargin + galleryElementWidth;
-const galleryOffsetX = 0;
+let galleryElementWidth = parseInt($("#gallery").children().css("width"));
+let galleryNextStep = galleryElementMargin + galleryElementWidth;
+let galleryOffsetX = 0;
 const galleryLength = 7;
 console.log(galleryNextStep);
 
@@ -38,6 +38,13 @@ function updateGallery() {
   $("#gallery").css("left", galleryOffsetX + galleryNextStep * galleryIndex);
 }
 
+function calcGalleryValues() {
+  galleryElementMargin = parseInt($("#gallery").children().css("margin-right"));
+  galleryElementWidth = parseInt($("#gallery").children().css("width"));
+  galleryNextStep = galleryElementMargin + galleryElementWidth;
+  galleryOffsetX = 0;
+}
+
 $(window).scroll(function () {
   if ($(this).scrollTop() >= pageOffset / 2) {
     $("#car").css("offset-distance", calcAnimationOnScrollProgress() + "%");
@@ -52,6 +59,11 @@ $(window).scroll(function () {
   if ($(this).scrollTop() + $(window).height() === documentHeight) {
     $("#car").css("offset-distance", "100%");
   }
+});
+
+$(window).on("resize", function () {
+  calcGalleryValues();
+  updateGallery();
 });
 
 $(document).ready(function () {

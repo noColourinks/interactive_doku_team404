@@ -294,6 +294,46 @@ section#landing {
   width: 250px;
 }
 
+.step1 > .icon {
+  background-image: url("../img/icons/Gif1Autoeinsteigen.gif");
+  background-size: cover;
+}
+
+.step2 > .icon {
+  background-image: url("../img/icons/Gif2LenkradDauerschleife.gif");
+  background-size: cover;
+}
+
+.step3 > .icon {
+  background-image: url("../img/icons/Gif3-autofährtaufstrasse.gif");
+  background-size: cover;
+}
+
+.step4 > .icon {
+  background-image: url("../img/icons/Gif4KreuzungNeu.gif");
+  background-size: cover;
+}
+
+.step5 > .icon {
+  background-image: url("../img/icons/Gif5autoaussteigen.gif");
+  background-size: cover;
+}
+
+.step6 > .icon {
+  background-image: url("../img/icons/Gif1Autoeinsteigen.gif");
+  background-size: cover;
+}
+
+.step7 > .icon {
+  background-image: url("../img/icons/Gif1Autoeinsteigen.gif");
+  background-size: cover;
+}
+
+.step8 > .icon {
+  background-image: url("../img/icons/Gif1Autoeinsteigen.gif");
+  background-size: cover;
+}
+
 .arrow {
   width: 50px;
   height: 50px;
