@@ -277,7 +277,7 @@ section#landing {
 }
 
 .gallery > div {
-  margin-right: calc(100% - 2 * 250px);
+  margin-right: calc(100% - 2 * 252px);
 }
 
 .element .icon {
@@ -300,7 +300,7 @@ section#landing {
 }
 
 .step2 > .icon {
-  background-image: url("../img/icons/Gif2LenkradDauerschleife.gif");
+  background-image: url("../img/icons/Gif2-Lenkrad.gif");
   background-size: cover;
 }
 
@@ -320,17 +320,17 @@ section#landing {
 }
 
 .step6 > .icon {
-  background-image: url("../img/icons/Gif1Autoeinsteigen.gif");
+  background-image: url("../img/icons/Gif6Visualisierung.gif");
   background-size: cover;
 }
 
 .step7 > .icon {
-  background-image: url("../img/icons/Gif1Autoeinsteigen.gif");
+  background-image: url("../img/icons/Gif7Autoeinsteigen.gif");
   background-size: cover;
 }
 
 .step8 > .icon {
-  background-image: url("../img/icons/Gif1Autoeinsteigen.gif");
+  background-image: url("../img/icons/Gif8LehrerSchüler.gif");
   background-size: cover;
 }
 
