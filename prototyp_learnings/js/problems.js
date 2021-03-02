@@ -97,32 +97,32 @@ export default [
   {
     id: 168,
     ride_id: 6,
-    situation_tag: "Nicht von sich selbst ausgehen",
+    situation_tag: "Nicht von uns ausgehen",
   },
   {
     id: 168,
     ride_id: 6,
-    situation_tag: "Nicht von sich selbst ausgehen",
+    situation_tag: "Nicht von uns ausgehen",
   },
   {
     id: 168,
     ride_id: 6,
-    situation_tag: "Nicht von sich selbst ausgehen",
+    situation_tag: "Nicht von uns ausgehen",
   },
   {
     id: 168,
     ride_id: 6,
-    situation_tag: "Nicht von sich selbst ausgehen",
+    situation_tag: "Nicht von uns ausgehen",
   },
   {
     id: 168,
     ride_id: 6,
-    situation_tag: "Nicht von sich selbst ausgehen",
+    situation_tag: "Nicht von uns ausgehen",
   },
   {
     id: 168,
     ride_id: 6,
-    situation_tag: "Nicht von sich selbst ausgehen",
+    situation_tag: "Nicht von uns ausgehen",
   },
   {
     id: 168,

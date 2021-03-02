@@ -24,7 +24,7 @@ function triggerLoad(section, params) {
       mySessionMap.newMap([{ lat: 49.902803, lng: 8.858634 }], 20);
       mySessionMap.addMarker(
         { lat: 49.902803, lng: 8.858634 },
-        "Unser Cammpus <3",
+        "Unser Campus <3",
         "start"
       );
       console.log(dataControll);

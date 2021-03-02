@@ -10,5 +10,5 @@ export default {
     '{ "Ideenfindung": 10,"Recherchephase": 10, "Konzeptphase": 3,"Umsetzungsphase": 2}',
   start_time: "05.11.2020",
   temperature: 0,
-  weather_type: 8,
+  weather_type: 6,
 };
