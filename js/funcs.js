@@ -1,12 +1,36 @@
+const galleryElementMargin = parseInt(
+  $("#gallery").children().css("margin-right")
+);
+const gallerElementWidth = parseInt($("#gallery").children().css("width"));
+const galleryNextStep = galleryElementMargin + gallerElementWidth;
+const galleryOffsetX = 0;
+
+console.log(galleryNextStep);
+
 let scrollTop = $(window).scrollTop();
 let documentHeight = $(document).height();
 let pageOffset = $(window).height() + 200;
+let galleryIndex = 0;
 
 function calcAnimationOnScrollProgress() {
   return (
     (100 / (documentHeight - pageOffset)) *
     ($(window).scrollTop() - pageOffset + $(window).height() / 2)
   );
+}
+
+function toNextGallery() {
+  galleryIndex++;
+  updateGallery();
+}
+
+function toLastGallery() {
+  galleryIndex--;
+  updateGallery();
+}
+
+function updateGallery() {
+  $("#gallery").css("left", galleryOffsetX + galleryNextStep * galleryIndex);
 }
 
 $(window).scroll(function () {
@@ -26,6 +50,11 @@ $(window).scroll(function () {
 });
 
 $(document).ready(function () {
+  //setup Gallery
+  $("#gallery_left").on("click", toNextGallery);
+  $("#gallery_right").on("click", toLastGallery);
+
+  updateGallery();
   $(".problem").click(function () {
     let ID = $(this).attr("id");
     console.log(ID);

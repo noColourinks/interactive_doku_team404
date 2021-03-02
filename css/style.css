@@ -274,6 +274,10 @@ section#landing {
   top: 0;
 }
 
+.gallery > div {
+  margin-right: 20%;
+}
+
 .element .icon {
   height: 250px;
   width: 250px;
