@@ -37,7 +37,7 @@ input:focus {
 .smartphone_border {
   height: 830px;
   margin: 12px calc(50% - 219px);
-  background-color: #1212;
+  background-color: rgb(15, 81, 89);
   width: 440px;
   border-radius: 20px;
 }
