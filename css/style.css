@@ -287,7 +287,9 @@ section#landing {
   border-radius: 50%;
   margin-bottom: 20px;
 }
-
+.element h2 {
+  margin-bottom: 10px;
+}
 .element h2,
 .element p {
   text-align: center;
@@ -300,7 +302,7 @@ section#landing {
 }
 
 .step2 > .icon {
-  background-image: url("../img/icons/Gif2-Lenkrad.gif");
+  background-image: url("../img/icons/Gif2.gif");
   background-size: cover;
 }
 
