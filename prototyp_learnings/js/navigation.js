@@ -21,7 +21,12 @@ function triggerLoad(section, params) {
   switch (section) {
     //my_session -> eine Fahrt
     case "my_session":
-      mySessionMap.newMap([{ lat: 49, lng: 8 }], 15);
+      mySessionMap.newMap([{ lat: 49.902803, lng: 8.858634 }], 20);
+      mySessionMap.addMarker(
+        { lat: 49.902803, lng: 8.858634 },
+        "Unser Cammpus <3",
+        "start"
+      );
       console.log(dataControll);
       let ride = Ride;
       // dataControll.getRideData(params).then((ride) => {
@@ -52,7 +57,8 @@ function triggerLoad(section, params) {
         contextMySessionsInformation,
         chartData,
         "Straßentypen",
-        my_gradientInformation
+        my_gradientInformation,
+        "Wochen"
         // "rgba(15, 81, 89, 1)"
       );
       charts["chartMySessionsRoadInformation"] = chartSessionsInfromation;
@@ -78,7 +84,8 @@ function triggerLoad(section, params) {
         contextMySessionsProblems,
         countArrayObjectForChart(problems, "situation_tag"),
         "Probleme",
-        my_gradient
+        my_gradient,
+        "Anzahl"
         // "rgba(15, 81, 89, 1)"
       );
       charts["chartSessionsProblems"] = chartSessionsProblems;
@@ -172,8 +179,8 @@ function generateLightConditionHtml(ride) {
       break;
 
     default:
-      lightConditions_icon = "tageslicht";
-      lightConditions_text = "Sichtverhältnisse: optimal";
+      lightConditions_icon = "leichte_dunkelheit";
+      lightConditions_text = "Sichtverhältnisse: schwierig";
   }
   return `<div class="icon ${lightConditions_icon}"></div>
 <p><span>${lightConditions_text}</span></p>
@@ -181,12 +188,7 @@ function generateLightConditionHtml(ride) {
 }
 function generateRideMetaData(ride) {
   $("#session_time").html(
-    `<p>${ride.start_time} bis ${
-      ride.end_time
-    } Uhr</p><p>Dauer: ${substractTime(
-      TimeInMinutes(ride.start_time),
-      TimeInMinutes(ride.end_time)
-    )} h</p>
+    `<p>${ride.start_time} bis ${ride.end_time} Uhr</p><p>Dauer: 112 Tage</p>
     `
   );
 
@@ -208,6 +210,14 @@ function substractTime(start, end) {
     minutes = "0" + minutes;
   }
   return hours + ":" + minutes;
+}
+function substractDateFromDate(dateOne, dateTwo) {
+  const date1 = new Date(dateOne);
+  const date2 = new Date(dateTwo);
+  const diffTime = Math.abs(date2 - date1);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  console.log(diffDays);
+  return diffDays;
 }
 
 function substractDate(date, sub) {
@@ -347,14 +357,14 @@ function filterProblemsTroughDate(earliestDate, latestDate, problemRideArray) {
   return result;
 }
 
-function drawHorizontalBarChart(context, chartData, title, color) {
+function drawHorizontalBarChart(context, chartData, title, color, label) {
   let barChart = new Chart(context, {
     type: "horizontalBar",
     data: {
       labels: chartData.strings,
       datasets: [
         {
-          label: "Anzahl",
+          label: label,
           data: chartData.data,
           backgroundColor: color,
           borderWidth: 0,

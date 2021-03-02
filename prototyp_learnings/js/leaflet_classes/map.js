@@ -21,10 +21,10 @@ export default class Map {
 
     this.icons = {
       problem: new DotIcon({
-        iconUrl: "assets/img/red_dot.png",
+        iconUrl: "prototyp_learnings/assets/img/red_dot.png",
       }),
       start: new DotIcon({
-        iconUrl: "assets/img/blue_dot.png",
+        iconUrl: "prototyp_learnings/assets/img/blue_dot.png",
       }),
     };
   }

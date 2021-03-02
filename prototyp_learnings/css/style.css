@@ -28,6 +28,10 @@ input:focus {
   -o-border-radius: 20px;
 }
 
+.relative {
+  position: relative;
+}
+
 /******** Ab hier kommt alles für alle section ********/
 
 .smartphone_border {
