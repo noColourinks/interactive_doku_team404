@@ -1,12 +1,48 @@
+let galleryElementMargin = parseInt(
+  $("#gallery").children().css("margin-right")
+);
+let galleryElementWidth = parseInt($("#gallery").children().css("width"));
+let galleryNextStep = galleryElementMargin + galleryElementWidth;
+let galleryOffsetX = 0;
+const galleryLength = 7;
+console.log(galleryNextStep);
+
 let scrollTop = $(window).scrollTop();
 let documentHeight = $(document).height();
 let pageOffset = $(window).height() + 200;
+let galleryIndex = 0;
 
 function calcAnimationOnScrollProgress() {
   return (
     (100 / (documentHeight - pageOffset)) *
     ($(window).scrollTop() - pageOffset + $(window).height() / 2)
   );
+}
+
+function toNextGallery() {
+  if (galleryIndex > galleryLength * -1) {
+    galleryIndex--;
+    updateGallery();
+  }
+}
+
+function toLastGallery() {
+  if (galleryIndex <= 0) {
+    console.log(galleryIndex);
+    galleryIndex++;
+    updateGallery();
+  }
+}
+
+function updateGallery() {
+  $("#gallery").css("left", galleryOffsetX + galleryNextStep * galleryIndex);
+}
+
+function calcGalleryValues() {
+  galleryElementMargin = parseInt($("#gallery").children().css("margin-right"));
+  galleryElementWidth = parseInt($("#gallery").children().css("width"));
+  galleryNextStep = galleryElementMargin + galleryElementWidth;
+  galleryOffsetX = 0;
 }
 
 $(window).scroll(function () {
@@ -25,7 +61,17 @@ $(window).scroll(function () {
   }
 });
 
+$(window).on("resize", function () {
+  calcGalleryValues();
+  updateGallery();
+});
+
 $(document).ready(function () {
+  //setup Gallery
+  $("#gallery_left").on("click", toLastGallery);
+  $("#gallery_right").on("click", toNextGallery);
+
+  updateGallery();
   $(".problem").click(function () {
     let ID = $(this).attr("id");
     console.log(ID);

@@ -272,6 +272,12 @@ section#landing {
   position: absolute;
   left: 0;
   top: 0;
+  width: 100%;
+  transition: left 0.5s ease-in-out;
+}
+
+.gallery > div {
+  margin-right: calc(100% - 2 * 252px);
 }
 
 .element .icon {
@@ -280,13 +286,54 @@ section#landing {
   background-color: #0f5159;
   border-radius: 50%;
   margin-bottom: 20px;
-  margin-right: 50px;
 }
-
+.element h2 {
+  margin-bottom: 10px;
+}
 .element h2,
 .element p {
   text-align: center;
   width: 250px;
+}
+
+.step1 > .icon {
+  background-image: url("../img/icons/Gif1Autoeinsteigen.gif");
+  background-size: cover;
+}
+
+.step2 > .icon {
+  background-image: url("../img/icons/Gif2.gif");
+  background-size: cover;
+}
+
+.step3 > .icon {
+  background-image: url("../img/icons/Gif3-autofährtaufstrasse.gif");
+  background-size: cover;
+}
+
+.step4 > .icon {
+  background-image: url("../img/icons/Gif4KreuzungNeu.gif");
+  background-size: cover;
+}
+
+.step5 > .icon {
+  background-image: url("../img/icons/Gif5autoaussteigen.gif");
+  background-size: cover;
+}
+
+.step6 > .icon {
+  background-image: url("../img/icons/Gif6Visualisierung.gif");
+  background-size: cover;
+}
+
+.step7 > .icon {
+  background-image: url("../img/icons/Gif7Autoeinsteigen.gif");
+  background-size: cover;
+}
+
+.step8 > .icon {
+  background-image: url("../img/icons/Gif8LehrerSchüler.gif");
+  background-size: cover;
 }
 
 .arrow {
