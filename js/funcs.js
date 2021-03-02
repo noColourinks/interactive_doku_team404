@@ -1,10 +1,10 @@
 const galleryElementMargin = parseInt(
   $("#gallery").children().css("margin-right")
 );
-const gallerElementWidth = parseInt($("#gallery").children().css("width"));
-const galleryNextStep = galleryElementMargin + gallerElementWidth;
+const galleryElementWidth = parseInt($("#gallery").children().css("width"));
+const galleryNextStep = galleryElementMargin + galleryElementWidth;
 const galleryOffsetX = 0;
-
+const galleryLength = 7;
 console.log(galleryNextStep);
 
 let scrollTop = $(window).scrollTop();
@@ -20,13 +20,18 @@ function calcAnimationOnScrollProgress() {
 }
 
 function toNextGallery() {
-  galleryIndex++;
-  updateGallery();
+  if (galleryIndex > galleryLength * -1) {
+    galleryIndex--;
+    updateGallery();
+  }
 }
 
 function toLastGallery() {
-  galleryIndex--;
-  updateGallery();
+  if (galleryIndex <= 0) {
+    console.log(galleryIndex);
+    galleryIndex++;
+    updateGallery();
+  }
 }
 
 function updateGallery() {
@@ -51,8 +56,8 @@ $(window).scroll(function () {
 
 $(document).ready(function () {
   //setup Gallery
-  $("#gallery_left").on("click", toNextGallery);
-  $("#gallery_right").on("click", toLastGallery);
+  $("#gallery_left").on("click", toLastGallery);
+  $("#gallery_right").on("click", toNextGallery);
 
   updateGallery();
   $(".problem").click(function () {
