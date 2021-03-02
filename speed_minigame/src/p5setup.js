@@ -5,6 +5,7 @@ let carDriving;
 let carBrake;
 let carStanding;
 let trafficLight;
+let brake;
 let backgroundSpeedMinigame;
 let comfortaa;
 let high;
@@ -24,6 +25,7 @@ function preload() {
   comfortaa = loadFont("./speed_minigame/fonts/Comfortaa-Bold.ttf");
   high = loadImage("./speed_minigame/img/high.png");
   low = loadImage("./speed_minigame/img/low.png");
+  brake = loadImage("./speed_minigame/img/Bremspedal.png");
 }
 window.preload = preload;
 
@@ -45,6 +47,7 @@ export {
   comfortaa,
   high,
   low,
+  brake,
 };
 
 window.setup = setup;

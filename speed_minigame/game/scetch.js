@@ -4,6 +4,7 @@ import Car from "./car.js";
 import Graph from "./graph.js";
 import World from "./world.js";
 import { trafficLight, comfortaa } from "../src/p5setup.js";
+import Brake from "./brake.js";
 
 let started = false;
 let car;
@@ -11,6 +12,7 @@ let world;
 let speedGraph;
 let trafficLightObj;
 let state;
+let brake;
 
 window.addEventListener("restart", () => {
   restart();
@@ -32,9 +34,9 @@ function draw() {
     textAlign(CENTER);
     textSize(25);
     textFont(comfortaa);
-    textLeading(52);
+    textLeading(62);
     text(
-      "Starte das Spiel mit B.\nBremse mit B.",
+      "Starte die Simulation mit B/ klick.\nBremse mit B/ klick auf die Bremse.",
       width / 2 - 250,
       height / 2 - 25,
       500,
@@ -79,9 +81,11 @@ function restart() {
     0
   );
   trafficLightObj.switchImage("trafficLight");
+  brake = new Brake(790, 280, 268.29 / 2.5, 524.08 / 2.5);
   world.addChild(car);
   world.addChild(speedGraph);
   world.addChild(trafficLightObj);
+  world.addChild(brake);
   world.onInit();
   switchState("start");
 }
@@ -96,6 +100,9 @@ function mouseClicked() {
 window.mouseClicked = mouseClicked;
 
 function mousePressed() {
+  if (state === "start") {
+    switchState("game");
+  }
   if (world instanceof InteractiveObject) {
     world.onMousePress();
   }

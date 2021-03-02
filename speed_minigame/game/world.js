@@ -4,6 +4,7 @@ import { backgroundSpeedMinigame, comfortaa } from "../src/p5setup.js";
 export default class World extends InteractiveObject {
   constructor(x, y, width, height) {
     super(x, y, width, height);
+    console.log(width, height);
     this.sweetSpot = { xLeft: width - 250.73, xRight: width - 200 };
     this.addImage(backgroundSpeedMinigame, "background", width, height, 0, 0);
     this.switchImage("background");
@@ -39,15 +40,18 @@ export default class World extends InteractiveObject {
     fill(255);
     textFont(comfortaa);
     textSize(16);
+    textLeading(37);
     textAlign(CENTER);
-    text(this.winText, this.size.w / 2 - 250, this.size.h / 2, 500, 20);
+    text(this.winText, this.size.w / 2 - 250, this.size.h / 2, 500, 100);
   }
 
   checkSweetSpot(pos) {
     if (pos.x + 310 < this.sweetSpot.xRight) {
-      this.winText = "Vor der Ampel angehalten!";
+      this.winText =
+        "Vor der Ampel angehalten!\nDrücke B oder klick um neuzustarten.";
     } else {
-      this.winText = "Über der Haltelinie!";
+      this.winText =
+        "Über der Haltelinie!\nDrücke B oder klick um neuzustarten.";
     }
     this.end = 1;
   }
@@ -58,8 +62,15 @@ export default class World extends InteractiveObject {
     }
   }
 
+  mousePressed() {
+    if (this.end === 1 || this.end === 2) {
+      this.end = 0;
+      window.dispatchEvent(new CustomEvent("restart"));
+    }
+  }
+
   keyReleased() {
-    if (keyCode === 32 && this.end === 2) {
+    if (keyCode === 66 && this.end === 2) {
       this.end = 0;
       window.dispatchEvent(new CustomEvent("restart"));
     }

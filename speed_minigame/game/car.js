@@ -47,10 +47,11 @@ export default class Car extends AnimationObject {
     this.setSpeed(7, 0, 0);
     this.brakeTime = 0;
     this.gasTime = 0;
+    this.breaking = false;
     this.setCostumAnimation(
       "carDrivingAnimation",
-      this.triggerIds.keyReleased + ":32",
-      this.triggerIds.keyPressed + ":32",
+      this.triggerIds.keyReleased + ":66",
+      this.triggerIds.keyPressed + ":66",
       0.4,
       (value) => {
         this.runAnimationFrame("carDriving", value);
@@ -59,8 +60,8 @@ export default class Car extends AnimationObject {
     );
     this.setCostumAnimation(
       "carBrakingAnimation",
-      this.triggerIds.keyPressed + ":32",
-      this.triggerIds.keyReleased + ":32",
+      this.triggerIds.keyPressed + ":66",
+      this.triggerIds.keyReleased + ":66",
       0.4,
       (value) => {
         this.runAnimationFrame("carBrakeFrames", value);
@@ -81,12 +82,33 @@ export default class Car extends AnimationObject {
     //   { active: true, repeate: true, resetAfterFinish: true }
     // );
   }
+  init() {
+    window.addEventListener("brakePressed", () => {
+      this.stopAllAnimations();
+      this.startAnimation("carBrakingAnimation");
+      this.breaking = true;
+    });
+    window.addEventListener("brakeReleased", () => {
+      this.stopAllAnimations();
+      this.startAnimation("carDrivingAnimation");
+      this.breaking = false;
+    });
+  }
 
-  keyPressed() {}
+  keyPressed() {
+    if (keyCode === 66) {
+      window.dispatchEvent(new CustomEvent("brakeIsDown"));
+    }
+  }
+  keyReleased() {
+    if (keyCode === 66) {
+      window.dispatchEvent(new CustomEvent("brakeUp"));
+    }
+  }
 
   update() {
     if (this.isDriving) {
-      if (keyIsDown(66)) {
+      if (keyIsDown(66) || this.breaking) {
         if (this.brakeTime > -0.3) this.brakeTime -= 0.02;
         this.gasTime = 0;
         this.setAcceleration(this.brakeTime, 0, 0);

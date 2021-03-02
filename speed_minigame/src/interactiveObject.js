@@ -69,13 +69,13 @@ export default class InteractiveObject extends DisplayObject {
     super.onUpdate();
   }
 
-  hit(x, y) {
+  hit(x, y, debugInformation = "") {
     const realPos = this.getRealXY();
     if (
       x > realPos.x &&
-      x < realPos.x + this.size.w * this.parentScale &&
+      x < realPos.x + this.size.w * this.parentScale.x &&
       y > realPos.y &&
-      y < realPos.y + this.size.h * this.parentScale
+      y < realPos.y + this.size.h * this.parentScale.y
     ) {
       return true;
     }
@@ -170,7 +170,7 @@ export default class InteractiveObject extends DisplayObject {
 
   onMousePress() {
     if (this.isActive) {
-      if (this.hit(mouseX, mouseY)) {
+      if (this.hit(mouseX, mouseY, "pressed")) {
         this.children.forEach((child) => {
           if (child instanceof InteractiveObject) {
             child.onMousePress();
