@@ -1,6 +1,6 @@
 .responsive_video {
   position: relative;
-  padding-bottom: 56.25%;
+  /* padding-bottom: 56.25%; */
   padding-top: 0px;
   width: calc(100% - 510px);
   margin-left: 30px;

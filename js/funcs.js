@@ -6,6 +6,7 @@ let galleryNextStep = galleryElementMargin + galleryElementWidth;
 let galleryOffsetX = 0;
 const galleryLength = 7;
 console.log(galleryNextStep);
+let activeCarInformation = "";
 
 let scrollTop = $(window).scrollTop();
 let documentHeight = $(document).height();
@@ -20,14 +21,14 @@ function calcAnimationOnScrollProgress() {
 }
 
 function toNextGallery() {
-  if (galleryIndex > galleryLength * -1) {
+  if (galleryIndex > galleryLength * -1 + 1) {
     galleryIndex--;
     updateGallery();
   }
 }
 
 function toLastGallery() {
-  if (galleryIndex <= 0) {
+  if (galleryIndex <= -1) {
     console.log(galleryIndex);
     galleryIndex++;
     updateGallery();
@@ -56,6 +57,32 @@ $(window).scroll(function () {
   } else {
     $("#Problem1").css("opacity", "0");
   }
+
+  if (calcAnimationOnScrollProgress() >= 18) {
+    $("#Problem2").css("opacity", "1");
+    $("#Problem2").css("visibility", "visible");
+  } else {
+    $("#Problem2").css("opacity", "0");
+  }
+
+  if (calcAnimationOnScrollProgress() >= 30) {
+    $("#Problem3").css("opacity", "1");
+    $("#Problem3").css("visibility", "visible");
+  } else {
+    $("#Problem3").css("opacity", "0");
+  }
+  if (calcAnimationOnScrollProgress() >= 45.7) {
+    $("#Problem4").css("opacity", "1");
+    $("#Problem4").css("visibility", "visible");
+  } else {
+    $("#Problem4").css("opacity", "0");
+  }
+  if (calcAnimationOnScrollProgress() >= 63) {
+    $("#Problem5").css("opacity", "1");
+    $("#Problem5").css("visibility", "visible");
+  } else {
+    $("#Problem5").css("opacity", "0");
+  }
   if ($(this).scrollTop() + $(window).height() === documentHeight) {
     $("#car").css("offset-distance", "100%");
   }
@@ -67,6 +94,7 @@ $(window).on("resize", function () {
 });
 
 $(document).ready(function () {
+  switchCarInformation();
   //setup Gallery
   $("#gallery_left").on("click", toLastGallery);
   $("#gallery_right").on("click", toNextGallery);
@@ -76,13 +104,57 @@ $(document).ready(function () {
     let ID = $(this).attr("id");
     console.log(ID);
     $(".nav_map").addClass(ID + "_answer");
+    console.log("Öffne Problemn mit ID: " + ID);
   });
 
   $(".close").click(function () {
     let parent = $(this).parent().attr("id");
+    console.log("Schließe Problemn mit parent: " + parent);
     $(".nav_map").removeClass(parent);
   });
+
+  $("#Lenkrad").click(function () {
+    activeCarInformation = "#Lenkrad";
+    switchCarInformation("#Lenkrad");
+  });
+  $("#Bremse").click(function () {
+    activeCarInformation = "#Bremse";
+    switchCarInformation("#Bremse");
+  });
+  $("#Problem").click(function () {
+    activeCarInformation = "#Problem";
+    switchCarInformation("#Problem");
+  });
 });
+
+function switchCarInformation(id) {
+  $(".carInformationOpen").removeClass(".carInformationOpen");
+  $(activeCarInformation).addClass(".carInformationOpen");
+  let h1 = "";
+  let p = "";
+  switch (id) {
+    case "#Lenkrad":
+      h1 = "Lenkrad";
+      p =
+        "Hier werden Daten zu der Lenkgeschwindigkeit und der Lenkwinkelkorrektur gemessen. Aus diesen entsteht das Lenkmuster. <br><br>Mit einem von der TU München und BMW entwickelten Lenkrad können durch weitere Sensoren auch vitale Parameter wie die Herzfrequenz oder der Hautwiderstand (Schweiß) gemessen werden.";
+      break;
+    case "#Bremse":
+      h1 = "Bremspedal";
+      p =
+        "Durch einen Sensor bei der Bremse werden Daten über die Stärke des Bremspedaldrucks gesammelt. Diese Daten ergeben über einen gewissen Zeitraum betrachtet das Bremsdruckmuster.";
+      break;
+    case "#Problem":
+      h1 = "Messgerät";
+      p =
+        "Bei dem Messgerät im Auto laufen alle Daten zusammen, die während der Fahrt gesammelt werden. Hierbei werden die Daten von dem Lenkradsensor, dem Bremsdruckmesser und der On-Board-Diagnose-Schnittstelle des Autos aufgezeichnet. Weiterhin sind in diesem Gerät auch noch eigene Sensoren, wie zum Beispiel der GPS-Tracker eingebaut.<br><br>Von diesem Messgerät werden die Daten dann an das Handy nach der Fahrt übertragen.";
+      break;
+    default:
+      h1 = "Aufbau im Auto";
+      p =
+        "Für unsere Anwendung müssen verschiedene Messgeräte im Auto platziert werden. Durch das Auswählen der Elemente in dem Bild, werden hier weitere Informationen zu den einzelnen Geräten angezeigt.";
+  }
+  $("#carInformation").html(`<h1>${h1}</h1><p class="column_two">${p}</p>`);
+}
 
 // console.log(scrollTop);
 // console.log(documentHeight);

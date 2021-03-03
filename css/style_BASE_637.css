@@ -73,10 +73,6 @@ section {
   display: flex;
 }
 
-#one_session .grid_container {
-  height: auto;
-}
-
 .grid_container {
   width: calc(100% - 540px);
   margin-top: 4vh;
@@ -213,6 +209,8 @@ section#landing {
   width: 197.4px;
   position: absolute;
   z-index: 2;
+  top: 573px;
+  left: -83px;
   opacity: 0;
   transition: opacity 1s ease-in-out 1s, transform 0.3s ease-in-out;
   -webkit-transition: opacity 1s ease-in-out 1s, transform 0.3s ease-in-out;
@@ -226,33 +224,6 @@ section#landing {
   -ms-transform: scale(1);
   -o-transform: scale(1);
   visibility: hidden;
-}
-
-#Problem1 {
-  top: 573px;
-  left: -83px;
-}
-
-#Problem2 {
-  /* opacity: 1;
-  visibility: visible; */
-  top: 1525px;
-  left: -70px;
-}
-
-#Problem3 {
-  top: 2210px;
-  left: 30px;
-}
-
-#Problem4 {
-  top: 3215px;
-  left: 30px;
-}
-
-#Problem5 {
-  top: 4345px;
-  left: 82px;
 }
 
 .problem:hover {
@@ -269,52 +240,8 @@ section#landing {
 }
 
 #Problem1_answer {
-  top: 280px;
-  right: -200px;
-  opacity: 1;
-  opacity: 0;
-  transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
-  -webkit-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
-  -moz-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
-  -ms-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
-  -o-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
-}
-#Problem2_answer {
-  top: 1180px;
-  right: -200px;
-  opacity: 1;
-  opacity: 0;
-  transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
-  -webkit-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
-  -moz-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
-  -ms-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
-  -o-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
-}
-#Problem3_answer {
-  top: 1950px;
-  right: -200px;
-  opacity: 1;
-  opacity: 0;
-  transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
-  -webkit-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
-  -moz-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
-  -ms-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
-  -o-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
-}
-#Problem4_answer {
-  top: 3020px;
-  right: -200px;
-  opacity: 1;
-  opacity: 0;
-  transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
-  -webkit-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
-  -moz-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
-  -ms-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
-  -o-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
-}
-#Problem5_answer {
-  top: 4080px;
-  right: -200px;
+  top: 550px;
+  right: -340px;
   opacity: 1;
   opacity: 0;
   transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
@@ -324,20 +251,16 @@ section#landing {
   -o-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
 }
 
-.nav_map.Problem1_answer #Problem1_answer,
-.nav_map.Problem2_answer #Problem2_answer,
-.nav_map.Problem3_answer #Problem3_answer,
-.nav_map.Problem4_answer #Problem4_answer,
-.nav_map.Problem5_answer #Problem5_answer {
+.nav_map.Problem1_answer #Problem1_answer {
   opacity: 1;
   right: 20px;
   transition: right 1s ease-in-out, opacity 0.3 ease-in-out;
 }
+
 /****** one session ******/
 
 #one_session {
   position: relative;
-  pointer-events: none;
 }
 
 #one_session .grid_container {
@@ -348,8 +271,7 @@ section#landing {
   width: calc(100vw - 600px);
   overflow: hidden;
   position: relative;
-  max-width: 650px;
-  min-height: 50vh;
+  height: 70vh;
 }
 
 .gallery {
@@ -362,7 +284,7 @@ section#landing {
 }
 
 .gallery > div {
-  margin-right: calc(100% - 2 * 250px);
+  margin-right: calc(100% - 2 * 252px);
 }
 
 .element .icon {
@@ -422,11 +344,9 @@ section#landing {
 }
 
 .arrow {
-  pointer-events: all;
   width: 50px;
   height: 50px;
   background-image: url(../img/arrow.svg);
-  position: absolute;
 }
 
 .arrow.right {
@@ -435,15 +355,7 @@ section#landing {
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
-  top: 38vh;
-  left: calc(50vw + 170px);
 }
-
-.arrow.left {
-  top: 38vh;
-  left: calc(50vw - 620px);
-}
-
 .background_one {
   background-image: url(../img/Background1.svg);
   height: 140vh;
@@ -454,158 +366,54 @@ section#landing {
   background-position: left;
 }
 
-.background_two {
-  background-image: url(../img/Background2.svg);
-  height: 190vh;
-  width: 60vw;
+/***** car structure ********/
+
+#car_structure svg {
+  width: calc(100vw - 560px);
+  margin-left: 5vw;
   position: absolute;
-  bottom: 0;
-  left: 0;
-  background-position: left bottom;
+  max-height: 890px;
 }
 
-/***** landingpage ********/
-
-.bubble {
-  min-width: 20vw;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  margin-bottom: 30px;
-  position: relative;
+svg #Lenkrad,
+svg #Problem,
+svg #Gas,
+svg #Bremse,
+svg #Schaltknauf,
+svg #Kupplung {
+  transform: scale(1);
+  transform-origin: center center;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  cursor: pointer;
 }
 
-.bubble.left:before {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 10px solid rgba(255, 255, 255, 0.1);
-  border-right: 10px solid transparent;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  left: -20px;
-  transform: rotate(180deg);
-  top: 19px;
+svg #Lenkrad:hover,
+svg #Problem:hover,
+svg #Gas:hover,
+svg #Bremse:hover,
+svg #Schaltknauf:hover,
+svg #Kupplung:hover {
+  transform: scale(1.03);
+  transform-origin: center center;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transform: scale(1.03);
+  -moz-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  -o-transform: scale(1.03);
 }
 
-.bubble.right:before {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 10px solid rgba(0, 255, 246, 0.2);
-  border-right: 10px solid transparent;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  right: -20px;
-  top: 19px;
-}
-
-.bubble.left,
-.bubble.right,
-.bubble.left:hover,
-.bubble.right:hover {
-  transition: background-color 0.5s ease;
-  -webkit-transition: background-color 0.5s ease;
-  -moz-transition: background-color 0.5s ease;
-  -ms-transition: background-color 0.5s ease;
-  -o-transition: background-color 0.5s ease;
-}
-
-.bubble.left:hover:before,
-.bubble.right:hover:before,
-.bubble.right:before,
-.bubble.left:before {
-  transition: border-left 0.5s ease;
-  -webkit-transition: border-left 0.5s ease;
-  -moz-transition: border-left 0.5s ease;
-  -ms-transition: border-left 0.5s ease;
-  -o-transition: border-left 0.5s ease;
-}
-
-.bubble.left {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.bubble.right {
-  background-color: rgba(0, 255, 246, 0.2);
-  cursor: context-menu;
-}
-
-.bubble.left:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.bubble.left:hover:before {
-  border-left: 10px solid rgba(255, 255, 255, 0.2);
-}
-
-.bubble.right:hover:before {
-  border-left: 10px solid rgba(0, 255, 246, 0.2);
-}
-
-.bubble.right p {
-  display: block;
-  padding: 20px;
-  height: 100%;
-  width: 100%;
-}
-
-.bubble a {
-  display: block;
-  padding: 20px;
-  height: 100%;
-  width: 100%;
-}
-
-#landing * {
-  color: #fff;
-  list-style: none;
-  text-decoration: none;
-}
-
-#landing .grid_container {
-  width: 100%;
-  margin: 10px;
-}
-
-#landing .grid_left,
-#landing .grid_right {
-  height: 80%;
-  display: flex;
-  flex-direction: column-reverse;
-  left: 0;
-  width: 42vw;
-  align-items: flex-start;
-}
-
-#landing .grid_right {
-  align-items: flex-end;
-  flex-direction: column;
-}
-
-/***** data ********/
-
-#data {
-  height: fit-content;
-}
-
-/***** Team ********/
-
-#team {
-  height: fit-content;
-}
-#team > .grid_container {
-  row-gap: 0px;
-}
-#team > .grid_container :first-child > h1 {
-  font-size: 3em;
-  font-family: "Roboto Black";
-  margin-bottom: -50px;
-}
 /***** responsive ********/
 
 @media only screen and (max-width: 1200px) {
