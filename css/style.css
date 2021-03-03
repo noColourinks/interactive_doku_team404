@@ -67,7 +67,6 @@ a {
 }
 
 section {
-  pointer-events: none;
   height: 100vh;
   width: 100%;
   /*  scroll-snap-align: center; */
@@ -338,6 +337,7 @@ section#landing {
 
 #one_session {
   position: relative;
+  pointer-events: none;
 }
 
 #one_session .grid_container {
@@ -422,6 +422,7 @@ section#landing {
 }
 
 .arrow {
+  pointer-events: all;
   width: 50px;
   height: 50px;
   background-image: url(../img/arrow.svg);
