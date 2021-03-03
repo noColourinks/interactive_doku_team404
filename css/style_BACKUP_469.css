@@ -349,13 +349,14 @@ section#landing {
   background-image: url(../img/arrow.svg);
 }
 
+<<<<<<< HEAD
 .arrow.right {
   transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
-}
+=======
 .background_one {
   background-image: url(../img/Background1.svg);
   height: 140vh;
@@ -420,4 +421,5 @@ svg #Kupplung:hover {
   .column_two {
     column-count: 1;
   }
+>>>>>>> origin/css-hell3
 }

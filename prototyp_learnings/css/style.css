@@ -30,16 +30,23 @@ input:focus {
 
 .relative {
   position: relative;
+  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
 }
 
 /******** Ab hier kommt alles für alle section ********/
 
 .smartphone_border {
-  height: 830px;
-  margin: 12px calc(50% - 219px);
+  height: 838px;
+  margin: 12px calc(50% - 226px);
   background-color: rgb(15, 81, 89);
-  width: 440px;
+  width: 450px;
   border-radius: 20px;
+  position: absolute;
+  margin-top: -12px;
 }
 
 div#content {
@@ -50,6 +57,7 @@ div#content {
   max-width: 420px; /* Maximale Breite */
   display: block;
   height: 812px;
+  border-radius: 10px;
 }
 
 div#my_session {
@@ -105,13 +113,13 @@ section#team #blue_headline_special {
   width: 420px;
   background-color: #fff;
   margin: 0 auto;
-  top: 5px;
+  top: 0px;
   height: 50px;
-  border-radius: 20px 20px 20px 20px;
-  -webkit-border-radius: 20px 20px 20px 20px;
-  -moz-border-radius: 20px 20px 20px 20px;
-  -ms-border-radius: 20px 20px 20px 20px;
-  -o-border-radius: 20px 20px 20px 20px;
+  border-radius: 10px 10px 20px 20px;
+  -webkit-border-radius: 10px 10px 20px 20px;
+  -moz-border-radius: 10px 10px 20px 20px;
+  -ms-border-radius: 10px 10px 20px 20px;
+  -o-border-radius: 10px 10px 20px 20px;
 }
 #nav > .nav_bar {
   opacity: 1;
