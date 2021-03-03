@@ -625,15 +625,19 @@ section#landing {
   font-family: "Roboto Black";
   margin-bottom: -50px;
 }
+
+#introducing .grid_container {
+  margin-top: 15vh;
+}
 /***** responsive ********/
 
 @media only screen and (max-width: 1900px) {
   .nav_map {
-    transform: scale(0.6);
-    -webkit-transform: scale(0.6);
-    -moz-transform: scale(0.6);
-    -ms-transform: scale(0.6);
-    -o-transform: scale(0.6);
+    transform: scale(0.7);
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    -o-transform: scale(0.7);
   }
 }
 
@@ -643,10 +647,19 @@ section#landing {
   }
 
   .nav_map {
-    transform: scale(0.6);
-    -webkit-transform: scale(0.6);
-    -moz-transform: scale(0.6);
-    -ms-transform: scale(0.6);
-    -o-transform: scale(0.6);
+    display: none;
+  }
+
+  .responsive_video {
+    width: 94vw !important;
+  }
+
+  .grid_container {
+    width: 100% !important;
+    margin: 4vw;
+  }
+
+  .arrow.right {
+    right: 2vw;
   }
 }
