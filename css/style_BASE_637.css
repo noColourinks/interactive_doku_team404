@@ -73,10 +73,6 @@ section {
   display: flex;
 }
 
-#one_session .grid_container {
-  height: auto;
-}
-
 .grid_container {
   width: calc(100% - 540px);
   margin-top: 4vh;
@@ -275,8 +271,7 @@ section#landing {
   width: calc(100vw - 600px);
   overflow: hidden;
   position: relative;
-  max-width: 650px;
-  min-height: 50vh;
+  height: 70vh;
 }
 
 .gallery {
@@ -352,7 +347,6 @@ section#landing {
   width: 50px;
   height: 50px;
   background-image: url(../img/arrow.svg);
-  position: absolute;
 }
 
 .arrow.right {
@@ -361,15 +355,7 @@ section#landing {
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
-  top: 38vh;
-  left: calc(50vw + 170px);
 }
-
-.arrow.left {
-  top: 38vh;
-  left: calc(50vw - 620px);
-}
-
 .background_one {
   background-image: url(../img/Background1.svg);
   height: 140vh;
@@ -378,16 +364,6 @@ section#landing {
   top: 180vh;
   left: 0;
   background-position: left;
-}
-
-.background_two {
-  background-image: url(../img/Background2.svg);
-  height: 190vh;
-  width: 60vw;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-position: left bottom;
 }
 
 /***** car structure ********/
@@ -436,129 +412,6 @@ svg #Kupplung:hover {
   -moz-transform: scale(1.03);
   -ms-transform: scale(1.03);
   -o-transform: scale(1.03);
-}
-
-/***** landingpage ********/
-
-.bubble {
-  min-width: 20vw;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  margin-bottom: 30px;
-  position: relative;
-}
-
-.bubble.left:before {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 10px solid rgba(255, 255, 255, 0.1);
-  border-right: 10px solid transparent;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  left: -20px;
-  transform: rotate(180deg);
-  top: 19px;
-}
-
-.bubble.right:before {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 10px solid rgba(0, 255, 246, 0.2);
-  border-right: 10px solid transparent;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  right: -20px;
-  top: 19px;
-}
-
-.bubble.left,
-.bubble.right,
-.bubble.left:hover,
-.bubble.right:hover {
-  transition: background-color 0.5s ease;
-  -webkit-transition: background-color 0.5s ease;
-  -moz-transition: background-color 0.5s ease;
-  -ms-transition: background-color 0.5s ease;
-  -o-transition: background-color 0.5s ease;
-}
-
-.bubble.left:hover:before,
-.bubble.right:hover:before,
-.bubble.right:before,
-.bubble.left:before {
-  transition: border-left 0.5s ease;
-  -webkit-transition: border-left 0.5s ease;
-  -moz-transition: border-left 0.5s ease;
-  -ms-transition: border-left 0.5s ease;
-  -o-transition: border-left 0.5s ease;
-}
-
-.bubble.left {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.bubble.right {
-  background-color: rgba(0, 255, 246, 0.2);
-  cursor: context-menu;
-}
-
-.bubble.left:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.bubble.left:hover:before {
-  border-left: 10px solid rgba(255, 255, 255, 0.2);
-}
-
-.bubble.right:hover:before {
-  border-left: 10px solid rgba(0, 255, 246, 0.2);
-}
-
-.bubble.right p {
-  display: block;
-  padding: 20px;
-  height: 100%;
-  width: 100%;
-}
-
-.bubble a {
-  display: block;
-  padding: 20px;
-  height: 100%;
-  width: 100%;
-}
-
-#landing * {
-  color: #fff;
-  list-style: none;
-  text-decoration: none;
-}
-
-#landing .grid_container {
-  width: 100%;
-  margin: 10px;
-}
-
-#landing .grid_left,
-#landing .grid_right {
-  height: 80%;
-  display: flex;
-  flex-direction: column-reverse;
-  left: 0;
-  width: 42vw;
-  align-items: flex-start;
-}
-
-#landing .grid_right {
-  align-items: flex-end;
-  flex-direction: column;
 }
 
 /***** responsive ********/

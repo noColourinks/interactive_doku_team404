@@ -380,6 +380,8 @@ section#landing {
   background-position: left;
 }
 
+<<<<<<< HEAD
+=======
 .background_two {
   background-image: url(../img/Background2.svg);
   height: 190vh;
@@ -561,6 +563,7 @@ svg #Kupplung:hover {
   flex-direction: column;
 }
 
+>>>>>>> origin/css-gallery-intro
 /***** responsive ********/
 
 @media only screen and (max-width: 1200px) {
