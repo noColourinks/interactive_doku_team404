@@ -390,54 +390,6 @@ section#landing {
   background-position: left bottom;
 }
 
-/***** car structure ********/
-
-#car_structure svg {
-  width: calc(100vw - 560px);
-  margin-left: 5vw;
-  position: absolute;
-  max-height: 890px;
-}
-
-svg #Lenkrad,
-svg #Problem,
-svg #Gas,
-svg #Bremse,
-svg #Schaltknauf,
-svg #Kupplung {
-  transform: scale(1);
-  transform-origin: center center;
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  cursor: pointer;
-}
-
-svg #Lenkrad:hover,
-svg #Problem:hover,
-svg #Gas:hover,
-svg #Bremse:hover,
-svg #Schaltknauf:hover,
-svg #Kupplung:hover {
-  transform: scale(1.03);
-  transform-origin: center center;
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -webkit-transform: scale(1.03);
-  -moz-transform: scale(1.03);
-  -ms-transform: scale(1.03);
-  -o-transform: scale(1.03);
-}
-
 /***** landingpage ********/
 
 .bubble {
