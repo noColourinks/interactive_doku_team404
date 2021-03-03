@@ -67,6 +67,7 @@ a {
 }
 
 section {
+  pointer-events: none;
   height: 100vh;
   width: 100%;
   /*  scroll-snap-align: center; */
@@ -213,8 +214,6 @@ section#landing {
   width: 197.4px;
   position: absolute;
   z-index: 2;
-  top: 573px;
-  left: -83px;
   opacity: 0;
   transition: opacity 1s ease-in-out 1s, transform 0.3s ease-in-out;
   -webkit-transition: opacity 1s ease-in-out 1s, transform 0.3s ease-in-out;
@@ -228,6 +227,33 @@ section#landing {
   -ms-transform: scale(1);
   -o-transform: scale(1);
   visibility: hidden;
+}
+
+#Problem1 {
+  top: 573px;
+  left: -83px;
+}
+
+#Problem2 {
+  /* opacity: 1;
+  visibility: visible; */
+  top: 1525px;
+  left: -70px;
+}
+
+#Problem3 {
+  top: 2210px;
+  left: 30px;
+}
+
+#Problem4 {
+  top: 3215px;
+  left: 30px;
+}
+
+#Problem5 {
+  top: 4345px;
+  left: 82px;
 }
 
 .problem:hover {
@@ -244,8 +270,52 @@ section#landing {
 }
 
 #Problem1_answer {
-  top: 550px;
-  right: -340px;
+  top: 280px;
+  right: -200px;
+  opacity: 1;
+  opacity: 0;
+  transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+  -webkit-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+  -moz-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+  -ms-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+  -o-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+}
+#Problem2_answer {
+  top: 1180px;
+  right: -200px;
+  opacity: 1;
+  opacity: 0;
+  transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+  -webkit-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+  -moz-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+  -ms-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+  -o-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+}
+#Problem3_answer {
+  top: 1950px;
+  right: -200px;
+  opacity: 1;
+  opacity: 0;
+  transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+  -webkit-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+  -moz-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+  -ms-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+  -o-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+}
+#Problem4_answer {
+  top: 3020px;
+  right: -200px;
+  opacity: 1;
+  opacity: 0;
+  transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+  -webkit-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+  -moz-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+  -ms-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+  -o-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
+}
+#Problem5_answer {
+  top: 4080px;
+  right: -200px;
   opacity: 1;
   opacity: 0;
   transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
@@ -255,12 +325,15 @@ section#landing {
   -o-transition: right 1s ease-in-out, opacity 0.5 ease-in-out;
 }
 
-.nav_map.Problem1_answer #Problem1_answer {
+.nav_map.Problem1_answer #Problem1_answer,
+.nav_map.Problem2_answer #Problem2_answer,
+.nav_map.Problem3_answer #Problem3_answer,
+.nav_map.Problem4_answer #Problem4_answer,
+.nav_map.Problem5_answer #Problem5_answer {
   opacity: 1;
   right: 20px;
   transition: right 1s ease-in-out, opacity 0.3 ease-in-out;
 }
-
 /****** one session ******/
 
 #one_session {
@@ -289,7 +362,7 @@ section#landing {
 }
 
 .gallery > div {
-  margin-right: calc(100% - 2 * 252px);
+  margin-right: calc(100% - 2 * 250px);
 }
 
 .element .icon {

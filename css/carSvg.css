@@ -1,20 +1,16 @@
 /***** car structure ********/
 
-#car_structure .car_message_container {
-  width: fit-content;
-  height: fit-content;
-  position: relative;
+#car_structure svg {
+  max-height: 890px;
+  height: 50vh;
 }
 
-#car_structure .testAusklapp {
-  left: 20%;
-  top: 20%;
-  width: 400px;
-  height: 200px;
+#car_structure p {
+  max-width: 871px;
+  padding-bottom: 10px;
 }
-#car_structure svg {
-  width: calc(100vw - 560px);
-  max-height: 890px;
+#car_structure .grid_container {
+  column-gap: 0px;
 }
 
 svg #Lenkrad,

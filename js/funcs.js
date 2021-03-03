@@ -57,6 +57,32 @@ $(window).scroll(function () {
   } else {
     $("#Problem1").css("opacity", "0");
   }
+
+  if (calcAnimationOnScrollProgress() >= 18) {
+    $("#Problem2").css("opacity", "1");
+    $("#Problem2").css("visibility", "visible");
+  } else {
+    $("#Problem2").css("opacity", "0");
+  }
+
+  if (calcAnimationOnScrollProgress() >= 30) {
+    $("#Problem3").css("opacity", "1");
+    $("#Problem3").css("visibility", "visible");
+  } else {
+    $("#Problem3").css("opacity", "0");
+  }
+  if (calcAnimationOnScrollProgress() >= 45.7) {
+    $("#Problem4").css("opacity", "1");
+    $("#Problem4").css("visibility", "visible");
+  } else {
+    $("#Problem4").css("opacity", "0");
+  }
+  if (calcAnimationOnScrollProgress() >= 63) {
+    $("#Problem5").css("opacity", "1");
+    $("#Problem5").css("visibility", "visible");
+  } else {
+    $("#Problem5").css("opacity", "0");
+  }
   if ($(this).scrollTop() + $(window).height() === documentHeight) {
     $("#car").css("offset-distance", "100%");
   }
@@ -78,10 +104,12 @@ $(document).ready(function () {
     let ID = $(this).attr("id");
     console.log(ID);
     $(".nav_map").addClass(ID + "_answer");
+    console.log("Öffne Problemn mit ID: " + ID);
   });
 
   $(".close").click(function () {
     let parent = $(this).parent().attr("id");
+    console.log("Schließe Problemn mit parent: " + parent);
     $(".nav_map").removeClass(parent);
   });
 
@@ -125,7 +153,7 @@ function switchCarInformation(id) {
       p =
         "Für unsere Anwendung müssen verschiedene Messgeräte im Auto platziert werden. Durch das Auswählen der Elemente in dem Bild, werden hier weitere Informationen zu den einzelnen Geräten angezeigt.";
   }
-  $("#carInformation").html(`<h1>${h1}</h1><p>${p}</p>`);
+  $("#carInformation").html(`<h1>${h1}</h1><p class="column_two">${p}</p>`);
 }
 
 // console.log(scrollTop);
